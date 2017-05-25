@@ -104,7 +104,7 @@
                 <!--end center-->
                 <div class="row">
                 <?php foreach ($cafe as $value): ?>
-                    <div class="col-md-3 col-sm-3">
+                    <div class="col-md-4 col-sm-4">
                         <div class="item">
                             <a href="detail.html">
                                 <div class="description">
@@ -121,14 +121,14 @@
                                 <!--end image-->
                             </a>
                             <div class="additional-info">
-                                <div class="rating-passive" data-rating="1">
+                                <div class="rating-passive" data-rating="<?php echo $value->average; ?>">
                                     <span class="stars"></span>
                                 </div>
                                 <div class="controls-more">
                                     <ul>
-                                        <li><a href="#">Add to favorites</a></li>
-                                        <li><a href="#">Add to watchlist</a></li>
-                                        <li><a href="#" class="quick-detail">Quick detail</a></li>
+                                        <li><a href="#" class="quick-detail">Details</a></li>
+                                        <li><a href="#">Show On Map</a></li>
+                                        <li><a href="#">Get Direction</a></li>
                                     </ul>
                                 </div>
                                 <!--end controls-more-->
