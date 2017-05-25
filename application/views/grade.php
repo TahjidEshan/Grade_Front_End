@@ -42,7 +42,7 @@
     <header id="page-header">
         <nav>
             <div class="left">
-                <a href="index.html" class="brand"><img src="assets\img\grade-icon-36x36.png" alt=""></a>
+                <a href="index.html" class="brand"><img src="<?php echo base_url(); ?>img/grade-icon-36x36.png" alt=""></a>
             </div>
             <!--end left-->
             <div class="right">
@@ -110,19 +110,19 @@
                                 <div class="description">
                                     <figure></figure>
                                     <div class="label label-default">Cafe</div>
-                                    <?php echo $value->name; ?>
-                                   <!--  <h4>63 Birch Street</h4> -->
+                                    <h3><?php echo $value->name; ?></h3>
+                                    <h4><?php echo $value->address; ?></h4>
+                                    <?php echo $value->city; ?>
                                 </div>
                                 <!--end description-->
                                 <div class="image bg-transfer">
-                                    <img src="<?php echo base_url(); ?>img\items\1.jpg" alt="">
+                                    <img src="<?php echo base_url(); ?>img/items/1.jpg" alt="">
                                 </div>
                                 <!--end image-->
                             </a>
                             <div class="additional-info">
-                                <div class="rating-passive" data-rating="4">
+                                <div class="rating-passive" data-rating="1">
                                     <span class="stars"></span>
-                                    <span class="reviews">6</span>
                                 </div>
                                 <div class="controls-more">
                                     <ul>
@@ -140,9 +140,6 @@
                     <?php endforeach; ?>
                 </div>
                 <!--end row-->
-                <div class="center">
-                    <a href="listing.html" class="btn btn-primary btn-light-frame btn-rounded btn-framed arrow">View all listings</a>
-                </div>
             <!--end center-->
             </div>
             <!--end container-->
@@ -166,7 +163,7 @@
                     </div>
                     <div class="background-wrapper">
                         <div class="bg-transfer opacity-50">
-                            <img src="<?php echo base_url(); ?>img\footer-bg.png" alt="">
+                            <img src="<?php echo base_url();?>img\footer-bg.png" alt="">
                         </div>
                     </div>
                     <!--end background-wrapper-->
