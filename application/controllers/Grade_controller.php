@@ -8,7 +8,8 @@ Class Grade_controller extends CI_Controller {
     }
 
     public function index() {
-         $this->load->view('grade');
+         $data['cafe']=$this->grade_database->cafeinfo();
+         $this->load->view('grade',$data);
     }
 }
 ?>
