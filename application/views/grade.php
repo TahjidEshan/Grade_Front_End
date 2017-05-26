@@ -50,10 +50,21 @@
                 </nav>
             </header>
             <div id="sidebar-wrapper" style="height:100%;">
-                    <ul id="sidebar-nav">
-                        <li class="sidebar-brand">Hola</li>
-                        <li class="sidebar-brand"><a onclick="closeNav()">Go Back</a></li>
-                    </ul>
+                <ul id="sidebar-nav" style="list-style:none">
+                    <li class="sidebar-brand">Easy to Find</li>
+                    <li class="sidebar-brand"><div class="rating-passive" data-rating=""><a class="stars"></a></div></li>
+                    <li class="sidebar-brand">Accesibility</li>
+                    <li class="sidebar-brand"><div class="rating-passive" data-rating=""><a class="stars"></a></div></li>
+                    <li class="sidebar-brand">Ambiance</li>
+                    <li class="sidebar-brand"><div class="rating-passive" data-rating=""><a class="stars"></a></div></li>
+                    <li class="sidebar-brand">Friendly Staff</li>
+                    <li class="sidebar-brand"><div class="rating-passive" data-rating=""><a class="stars"></a></div></li>
+                    <li class="sidebar-brand">Food</li>
+                    <li class="sidebar-brand"><div class="rating-passive" data-rating=""><a class="stars"></a></div></li>
+                    <li class="sidebar-brand">Noise Level</li>
+                    <li class="sidebar-brand"><div class="rating-passive" data-rating=""><a class="stars"></a></div></li>
+                    <li class="sidebar-brand"><a onclick="closeNav()">Go Back</a></li>
+                </ul>
             </div>
             <div id="page-content">
                 <div id="main">
@@ -114,7 +125,7 @@
                                             </div>
                                             <!--end description-->
                                             <div class="image bg-transfer">
-                                                <img src="<?php echo base_url(); ?>img/items/1.jpg" alt="">
+                                                <img src="https://maps.googleapis.com/maps/api/streetview?size=640x640&location=<?php echo $value->lat;?>,<?php echo $value->lng;?>7&key=AIzaSyBaDWhE5AeN2ar9Nz1bqDvzNQWJcj-iqjU" alt="">
                                             </div>
                                             <!--end image-->
                                         </a>
@@ -210,27 +221,25 @@
                 var mapDefaultZoom = 12; // default zoom
                 heroMap(_latitude, _longitude, element, markerTarget, sidebarResultTarget, showMarkerLabels, mapDefaultZoom);
                 </script>
-
             </div>
         </div>
-                <script>
-                function openNav() {
-                document.getElementById("sidebar-wrapper").style.width = "30%";
-                document.getElementById("main").style.marginLeft = "30vw";
-                document.getElementById("main").style.width = "70vw";
-                $('.itemTab').removeClass("col-md-4 col-xs-4 col-sm-4").addClass("col-md-3 col-xs-3 col-sm-3");
-                $('.container').removeClass("col-md-12 col-xs-12 col-sm-12").addClass("col-md-11 col-xs-11 col-sm-11");
-                }
-                /* Set the width of the side navigation to 0 */
-                function closeNav() {
-                document.getElementById("sidebar-wrapper").style.width = "0";
-                document.getElementById("main").style.marginLeft = "0";
-                document.getElementById("main").style.width = "100vw";
-                $('.itemTab').removeClass("col-md-3 col-xs-3 col-sm-3").addClass("col-md-4 col-xs-4 col-sm-4");
-                $('.container').removeClass("col-md-11 col-xs-11 col-sm-11").addClass("col-md-12 col-xs-12 col-sm-12");
-                }
-
-                </script>
+        <script>
+        function openNav() {
+        document.getElementById("sidebar-wrapper").style.width = "30%";
+        document.getElementById("main").style.marginLeft = "30vw";
+        document.getElementById("main").style.width = "70vw";
+        $('.itemTab').removeClass("col-md-4 col-xs-4 col-sm-4").addClass("col-md-3 col-xs-3 col-sm-3");
+        $('.container').removeClass("col-md-12 col-xs-12 col-sm-12").addClass("col-md-11 col-xs-11 col-sm-11");
+        }
+        /* Set the width of the side navigation to 0 */
+        function closeNav() {
+        document.getElementById("sidebar-wrapper").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+        document.getElementById("main").style.width = "100vw";
+        $('.itemTab').removeClass("col-md-3 col-xs-3 col-sm-3").addClass("col-md-4 col-xs-4 col-sm-4");
+        $('.container').removeClass("col-md-11 col-xs-11 col-sm-11").addClass("col-md-12 col-xs-12 col-sm-12");
+        }
+        </script>
     </div>
 </body>
 </html>
