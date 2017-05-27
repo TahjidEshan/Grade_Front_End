@@ -86,6 +86,42 @@
                             </div>
                             <div class="map" id="map-homepage"></div>
                         </div>
+                        <script>
+                            var map;
+                            function setMap() {
+                                var optimizedDatabaseLoading = 0;
+                                var _latitude = 40.732714;
+                                var _longitude = -73.991393;
+                                var element = "map-homepage";
+                                var mapDefaultZoom = 12; // default zoom
+                                // heroMap(_latitude, _longitude, element, markerTarget, sidebarResultTarget, showMarkerLabels, mapDefaultZoom);
+                                if (document.getElementById(element) != null) {
+                                    if (!mapDefaultZoom) {
+                                        mapDefaultZoom = 14;
+                                    }
+
+                                    if (!optimizedDatabaseLoading) {
+                                        var optimizedDatabaseLoading = 0;
+                                    }
+                                    map = new google.maps.Map(document.getElementById(element), {
+                                        zoom: mapDefaultZoom,
+                                        scrollwheel: false,
+                                        center: new google.maps.LatLng(_latitude, _longitude),
+                                        mapTypeId: "roadmap",
+                                        styles: [{"featureType": "administrative", "elementType": "labels.text.fill", "stylers": [{"color": "#c6c6c6"}]}, {"featureType": "landscape", "elementType": "all", "stylers": [{"color": "#f2f2f2"}]}, {"featureType": "poi", "elementType": "all", "stylers": [{"visibility": "off"}]}, {"featureType": "road", "elementType": "all", "stylers": [{"saturation": -100}, {"lightness": 45}]}, {"featureType": "road.highway", "elementType": "all", "stylers": [{"visibility": "simplified"}]}, {"featureType": "road.highway", "elementType": "geometry.fill", "stylers": [{"color": "#ffffff"}]}, {"featureType": "road.arterial", "elementType": "labels.icon", "stylers": [{"visibility": "off"}]}, {"featureType": "transit", "elementType": "all", "stylers": [{"visibility": "off"}]}, {"featureType": "water", "elementType": "all", "stylers": [{"color": "#dde6e8"}, {"visibility": "on"}]}]
+                                    });
+                                }
+                            }
+                            function setMarker(lat, lng) {
+                                var marker = new google.maps.Marker({
+                                    position: new google.maps.LatLng(lat, lng),
+                                    map: map
+                                });
+
+                            }
+                            setMap();
+                            setMarker(40.732714, -73.991393);
+                        </script>
                         <!--end map-wrapper-->
                         <!--end results-wrapper-->
                         <div class="col-md-10 col-sm-10 col-md-offset-1 col-sm-offset-1">
@@ -184,6 +220,9 @@
                                                     <!--end controls-more-->
                                                 </div>
                                                 <!--end additional-info-->
+                                                <script>
+                                                    setMarker(parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>'));
+                                                </script>
                                             </div>
                                             <!--end item-->
                                         </div>
@@ -239,35 +278,6 @@
                 <a href="#" class="to-top scroll" data-show-after-scroll="600"><i class="arrow_up"></i></a>
             </div>
         </div>
-        <script>
-            var map;
-            function setMap() {
-                var optimizedDatabaseLoading = 0;
-                var _latitude = 40.732714;
-                var _longitude = -73.991393;
-                var element = "map-homepage";
-                var mapDefaultZoom = 12; // default zoom
-                // heroMap(_latitude, _longitude, element, markerTarget, sidebarResultTarget, showMarkerLabels, mapDefaultZoom);
-                if (document.getElementById(element) != null) {
-                    if (!mapDefaultZoom) {
-                        mapDefaultZoom = 14;
-                    }
-
-                    if (!optimizedDatabaseLoading) {
-                        var optimizedDatabaseLoading = 0;
-                    }
-                    map = new google.maps.Map(document.getElementById(element), {
-                        zoom: mapDefaultZoom,
-                        scrollwheel: false,
-                        center: new google.maps.LatLng(_latitude, _longitude),
-                        mapTypeId: "roadmap",
-                        styles: [{"featureType": "administrative", "elementType": "labels.text.fill", "stylers": [{"color": "#c6c6c6"}]}, {"featureType": "landscape", "elementType": "all", "stylers": [{"color": "#f2f2f2"}]}, {"featureType": "poi", "elementType": "all", "stylers": [{"visibility": "off"}]}, {"featureType": "road", "elementType": "all", "stylers": [{"saturation": -100}, {"lightness": 45}]}, {"featureType": "road.highway", "elementType": "all", "stylers": [{"visibility": "simplified"}]}, {"featureType": "road.highway", "elementType": "geometry.fill", "stylers": [{"color": "#ffffff"}]}, {"featureType": "road.arterial", "elementType": "labels.icon", "stylers": [{"visibility": "off"}]}, {"featureType": "transit", "elementType": "all", "stylers": [{"visibility": "off"}]}, {"featureType": "water", "elementType": "all", "stylers": [{"color": "#dde6e8"}, {"visibility": "on"}]}]
-                    });
-                }
-            }
-            setMap();
-        </script>
-
         <script>
 
             function openNav(name, easytofind, accesibility, ambiance, staff, food, noise, lat, lng, addrs, city) {
