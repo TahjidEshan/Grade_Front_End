@@ -118,77 +118,77 @@
                                 <!--end section-title-->
                             </div>
                             <div class="cafe">
-                                                            <div class="row ">
+                                <div class="row ">
 
-                                <?php
-                                foreach ($cafe as $value):
-                                    $id = $value->cafe_survey_common_id;
-                                    $name = $value->name;
-                                    $easytodfind = 0;
-                                    $accesibility = 0;
-                                    $ambiance = 0;
-                                    $staff = 0;
-                                    $food = 0;
-                                    $noise = 0;
-                                    $avgRating = 0;
-                                    foreach ($cafeRating as $rating):
-                                        if ($rating->cafe_survey_common_id == $id) {
-                                            if ($rating->grade_type_id == 1) {
-                                                $easytofind = $rating->rating;
-                                            } else if ($rating->grade_type_id == 2) {
-                                                $accesibility = $rating->rating;
-                                            } else if ($rating->grade_type_id == 3) {
-                                                $ambiance = $rating->rating;
-                                            } else if ($rating->grade_type_id == 4) {
-                                                $staff = $rating->rating;
-                                            } else if ($rating->grade_type_id == 5) {
-                                                $food = $rating->rating;
-                                            } else if ($rating->grade_type_id == 6) {
-                                                $noise = $rating->rating;
+                                    <?php
+                                    foreach ($cafe as $value):
+                                        $id = $value->cafe_survey_common_id;
+                                        $name = $value->name;
+                                        $easytodfind = 0;
+                                        $accesibility = 0;
+                                        $ambiance = 0;
+                                        $staff = 0;
+                                        $food = 0;
+                                        $noise = 0;
+                                        $avgRating = 0;
+                                        foreach ($cafeRating as $rating):
+                                            if ($rating->cafe_survey_common_id == $id) {
+                                                if ($rating->grade_type_id == 1) {
+                                                    $easytofind = $rating->rating;
+                                                } else if ($rating->grade_type_id == 2) {
+                                                    $accesibility = $rating->rating;
+                                                } else if ($rating->grade_type_id == 3) {
+                                                    $ambiance = $rating->rating;
+                                                } else if ($rating->grade_type_id == 4) {
+                                                    $staff = $rating->rating;
+                                                } else if ($rating->grade_type_id == 5) {
+                                                    $food = $rating->rating;
+                                                } else if ($rating->grade_type_id == 6) {
+                                                    $noise = $rating->rating;
+                                                }
                                             }
-                                        }
-                                    endforeach;
-                                    foreach ($cafeRatingAverage as $avg):
-                                        if ($avg->cafe_survey_common_id == $id) {
-                                            $avgRating = $avg->average;
-                                        }
-                                    endforeach;
-                                    ?>
-                                    <div class="itemTab col-md-4 col-sm-4 col-xs-4">
-                                        <div class="item">
-                                            <a  onclick="openNav('<?php echo $name; ?>', '<?php echo $easytofind; ?>', '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>', '<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>', '<?php echo $value->address; ?>', '<?php echo $value->city; ?>')">
-                                                <div class="description">
-                                                    <figure></figure>
-                                                    <div class="label label-default">Cafe</div>
-                                                    <h3><?php echo $name; ?></h3>
-                                                    <h4><?php echo $value->address; ?></h4>
-                                                    <?php echo $value->city; ?>
+                                        endforeach;
+                                        foreach ($cafeRatingAverage as $avg):
+                                            if ($avg->cafe_survey_common_id == $id) {
+                                                $avgRating = $avg->average;
+                                            }
+                                        endforeach;
+                                        ?>
+                                        <div class="itemTab col-md-4 col-sm-4 col-xs-4">
+                                            <div class="item">
+                                                <a  onclick="openNav('<?php echo $name; ?>', '<?php echo $easytofind; ?>', '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>', '<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>', '<?php echo $value->address; ?>', '<?php echo $value->city; ?>')">
+                                                    <div class="description">
+                                                        <figure></figure>
+                                                        <div class="label label-default">Cafe</div>
+                                                        <h3><?php echo $name; ?></h3>
+                                                        <h4><?php echo $value->address; ?></h4>
+                                                        <?php echo $value->city; ?>
+                                                    </div>
+                                                    <!--end description-->
+                                                    <div class="image bg-transfer">
+                                                        <img class="img-responsive" src="https://maps.googleapis.com/maps/api/streetview?size=640x340&location=<?php echo $value->lat; ?>,<?php echo $value->lng; ?>7&key=AIzaSyBaDWhE5AeN2ar9Nz1bqDvzNQWJcj-iqjU" alt="">
+                                                    </div>
+                                                    <!--end image-->
+                                                </a>
+                                                <div class="additional-info">
+                                                    <div class="rating-passive" data-rating="<?php echo $avgRating; ?>">
+                                                        <span class="stars"></span>
+                                                    </div>
+                                                    <div class="controls-more">
+                                                        <ul>
+                                                            <li><a onclick="openNav('<?php echo $name; ?>', '<?php echo $easytofind; ?>', '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>', '<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>', '<?php echo $value->address; ?>', '<?php echo $value->city; ?>')">Details</a></li>
+                                                            <li><a href="#mapLabel" onclick="heroMap('<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>',"map-homepage","modal","modal",false, 16)">Show On Map</a></li>
+                                                            <li><a href="#">Get Direction</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <!--end controls-more-->
                                                 </div>
-                                                <!--end description-->
-                                                <div class="image bg-transfer">
-                                                    <img class="img-responsive" src="https://maps.googleapis.com/maps/api/streetview?size=640x640&location=<?php echo $value->lat; ?>,<?php echo $value->lng; ?>7&key=AIzaSyBaDWhE5AeN2ar9Nz1bqDvzNQWJcj-iqjU" alt="">
-                                                </div>
-                                                <!--end image-->
-                                            </a>
-                                            <div class="additional-info">
-                                                <div class="rating-passive" data-rating="<?php echo $avgRating; ?>">
-                                                    <span class="stars"></span>
-                                                </div>
-                                                <div class="controls-more">
-                                                    <ul>
-                                                        <li><a onclick="openNav('<?php echo $name; ?>', '<?php echo $easytofind; ?>', '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>', '<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>', '<?php echo $value->address; ?>', '<?php echo $value->city; ?>')">Details</a></li>
-                                                        <li><a href="#mapLabel" onclick="heroMap('<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>',"map-homepage","modal","modal",false, 16)">Show On Map</a></li>
-                                                        <li><a href="#">Get Direction</a></li>
-                                                    </ul>
-                                                </div>
-                                                <!--end controls-more-->
+                                                <!--end additional-info-->
                                             </div>
-                                            <!--end additional-info-->
+                                            <!--end item-->
                                         </div>
-                                        <!--end item-->
-                                    </div>
-                                <?php endforeach; ?>
-                            </div>
+                                    <?php endforeach; ?>
+                                </div>
 
                             </div>
                         </div>
@@ -237,19 +237,37 @@
                 </div>
                 <!--end page-wrapper-->
                 <a href="#" class="to-top scroll" data-show-after-scroll="600"><i class="arrow_up"></i></a>
-                <script>
-                    var optimizedDatabaseLoading = 0;
-                    var _latitude = 40.732714;
-                    var _longitude = -73.991393;
-                    var element = "map-homepage";
-                    var markerTarget = "modal"; // use "sidebar", "infobox" or "modal" - defines the action after click on marker
-                    var sidebarResultTarget = "modal"; // use "sidebar", "modal" or "new_page" - defines the action after click on marker
-                    var showMarkerLabels = false; // next to every marker will be a bubble with title
-                    var mapDefaultZoom = 12; // default zoom
-                    heroMap(_latitude, _longitude, element, markerTarget, sidebarResultTarget, showMarkerLabels, mapDefaultZoom);
-                </script>
             </div>
         </div>
+        <script>
+            var map;
+            function setMap() {
+                var optimizedDatabaseLoading = 0;
+                var _latitude = 40.732714;
+                var _longitude = -73.991393;
+                var element = "map-homepage";
+                var mapDefaultZoom = 12; // default zoom
+                // heroMap(_latitude, _longitude, element, markerTarget, sidebarResultTarget, showMarkerLabels, mapDefaultZoom);
+                if (document.getElementById(element) != null) {
+                    if (!mapDefaultZoom) {
+                        mapDefaultZoom = 14;
+                    }
+
+                    if (!optimizedDatabaseLoading) {
+                        var optimizedDatabaseLoading = 0;
+                    }
+                    map = new google.maps.Map(document.getElementById(element), {
+                        zoom: mapDefaultZoom,
+                        scrollwheel: false,
+                        center: new google.maps.LatLng(_latitude, _longitude),
+                        mapTypeId: "roadmap",
+                        styles: [{"featureType": "administrative", "elementType": "labels.text.fill", "stylers": [{"color": "#c6c6c6"}]}, {"featureType": "landscape", "elementType": "all", "stylers": [{"color": "#f2f2f2"}]}, {"featureType": "poi", "elementType": "all", "stylers": [{"visibility": "off"}]}, {"featureType": "road", "elementType": "all", "stylers": [{"saturation": -100}, {"lightness": 45}]}, {"featureType": "road.highway", "elementType": "all", "stylers": [{"visibility": "simplified"}]}, {"featureType": "road.highway", "elementType": "geometry.fill", "stylers": [{"color": "#ffffff"}]}, {"featureType": "road.arterial", "elementType": "labels.icon", "stylers": [{"visibility": "off"}]}, {"featureType": "transit", "elementType": "all", "stylers": [{"visibility": "off"}]}, {"featureType": "water", "elementType": "all", "stylers": [{"color": "#dde6e8"}, {"visibility": "on"}]}]
+                    });
+                }
+            }
+            setMap();
+        </script>
+
         <script>
 
             function openNav(name, easytofind, accesibility, ambiance, staff, food, noise, lat, lng, addrs, city) {
