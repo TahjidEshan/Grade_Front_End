@@ -73,8 +73,8 @@
             <div id="page-content container-fluid whole">
                 <div id="main">
                     <div class="firstPage" style="background-color:#4D4D70; height:85vh; margin-bottom:10vh;padding-top:30vh;">
-                        <h1 style="color:#FFFFFF; text-align:center; font-size:54px;margin-top: 5px;margin-bottom: 10px; font-family:Tahoma,Verdana,sans-serif;line-height: 1.1; font-weight:bold;">Welcome to Grade</h1>
-                        <h2 style="color:white,opacity: 0.5; text-align:center;color: #fff;font-size: 24px;font-weight: normal;margin-top: 5px;margin-bottom: 10px;font-family: Tahoma,Verdana,sans-serif;line-height: 1.1;">
+                        <h1 style="color:#FFF; text-align:center; font-size:54px;margin-top: 5px;margin-bottom: 10px; font-family:Tahoma,Verdana,sans-serif;line-height: 1.1; font-weight:normal;opacity:1;">Welcome to Grade</h1>
+                        <h2 style="opacity: 1; text-align:center;color: #fff;font-size: 24px;font-weight: normal;margin-top: 5px;margin-bottom: 10px;font-family: Tahoma,Verdana,sans-serif;line-height: 1.1;">
                             Grade is a universal social accessibility tool for people with disabilities. We map and grade accessible places around the country to promote equal access for everyone. We share our finding with everyone. We orgnize and ask public officials to make changes, most importanly, we go out and have fun. Grade is run by the awesome people at Cidny
                         </h2>
                     </div>
@@ -89,14 +89,14 @@
                         <!--end map-wrapper-->
                         <!--end results-wrapper-->
                         <div class="col-md-10 col-sm-10 col-md-offset-1 col-sm-offset-1">
-                            <div class="form search-form horizontal" style="border-width:10px;">
+                            <div class="form search-form horizontal" style="border-width:1px;">
                                 <form>
                                     <div class="input-group">
-                                        <input class="form-control" name="name" placeholder="What are you looking for?" type="text" style="background-color:white; color:black;">
+                                        <input class="form-control"  placeholder="What are you looking for?" type="text" style="background-color:#fff; color:#4d4d70;">
                                         <span class="input-group-btn">
-                                            <button class="btn btn-default" type="submit"><i class="arrow_right"></i></button>
+                                            <button class="btn btn-default" type="submit"><i class="arrow_right icon-custom"></i></button>
                                         </span>
-                                    </div><!-- /input-group -->
+                                    </div>
                                 </form>
                                 <!--end form-->
                             </div>
@@ -109,16 +109,16 @@
                             <div class="center">
                                 <div class="section-title">
                                     <div class="row">
-                                        <button class="btn btn-default">Cafe</button>
-                                        <button class="btn btn-default">Cafe</button>
-                                        <button class="btn btn-default">Cafe</button>
-                                        <button class="btn btn-default">Cafe</button>
+                                        <button class="btn btn-default"> <i class="fa fa-coffee" aria-hidden="true"></i> &nbsp;Cafe</button>
+                                        <button class="btn btn-default"><i class="fa fa-glass" aria-hidden="true"></i> &nbsp; Bar</button>
+                                        <button class="btn btn-default"><i class="fa fa-cutlery" aria-hidden="true"></i>&nbsp; Restaurant</button>
+                                        <button class="btn btn-default"><i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp; Poll SIte</button>
                                     </div>
                                 </div>
                                 <!--end section-title-->
                             </div>
-                            <!--end center-->
-                            <div class="row ">
+                            <div class="cafe">
+                                                            <div class="row ">
 
                                 <?php
                                 foreach ($cafe as $value):
@@ -189,8 +189,8 @@
                                     </div>
                                 <?php endforeach; ?>
                             </div>
-                            <!--end row-->
-                            <!--end center-->
+
+                            </div>
                         </div>
                         <!--end container-->
                     </section>
