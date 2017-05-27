@@ -7844,4 +7844,6 @@ body::before {
         transition:all .8s ease .5s
     }
 }
-
+.icon-custom{
+    color:#4d4d70;
+}

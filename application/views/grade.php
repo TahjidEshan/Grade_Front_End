@@ -262,7 +262,7 @@
                 document.getElementById("sidebar-city").innerHTML = city;
                 $('.itemTab').removeClass("col-md-4 col-xs-4 col-sm-4").addClass("col-md-3 col-xs-3 col-sm-3");
                 $('.container').removeClass("col-md-12 col-xs-12 col-sm-12").addClass("col-md-11 col-xs-11 col-sm-11");
-                var img = "https://maps.googleapis.com/maps/api/streetview?size=640x300&location=" + lat + "," + lng + "7&key=AIzaSyBaDWhE5AeN2ar9Nz1bqDvzNQWJcj-iqjU"
+                var img = "https://maps.googleapis.com/maps/api/streetview?size=640x450&location=" + lat + "," + lng + "7&key=AIzaSyBaDWhE5AeN2ar9Nz1bqDvzNQWJcj-iqjU"
                 $("#sidebar-image").attr("src", img);
                 $('#easytofind').stars(easytofind);
                 $('#accesibility').stars(accesibility);
@@ -284,9 +284,9 @@
                 return $(this).each(function () {
                     var rating = parseInt(value);
                     var numStars = $(this).data("numStars");
-                    var fullStar = new Array(Math.floor(rating + 1)).join('<i class="fa fa-star"></i>');
-                    var halfStar = ((rating % 1) !== 0) ? '<i class="fa fa-star-half-empty"></i>' : '';
-                    var noStar = new Array(Math.floor(numStars + 1 - rating)).join('<i class="fa fa-star-o"></i>');
+                    var fullStar = new Array(Math.floor(rating + 1)).join('<i class="fa fa-star icon-custom"></i>');
+                    var halfStar = ((rating % 1) !== 0) ? '<i class="fa fa-star-half-empty icon-custom"></i>' : '';
+                    var noStar = new Array(Math.floor(numStars + 1 - rating)).join('<i class="fa fa-star-o icon-custom"></i>');
                     $(this).html(fullStar + halfStar + noStar);
                 });
             }
