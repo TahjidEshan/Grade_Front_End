@@ -52,18 +52,19 @@
             <div id="sidebar-wrapper" style="height:100%;">
                 <ul id="sidebar-nav" style="list-style:none">
                     <li class="sidebar-brand"><img id="sidebar-image" class="img-responsive" src="" alt="COULD NOT LOAD IMAGE"></li>
+                    <li class="sidebar-brand"><b id="sidebar-name"></b></li>
                     <li class="sidebar-brand">Easy to Find    <a onclick="closeNav()" class="close" aria-label="Close"> <span aria-hidden="true">&times;</span></a></li>
-                    <li class="sidebar-brand"><div id="easytofind" class="rating-passive" data-rating=""><a class="stars"></a></div></li>
+                    <li class="sidebar-brand"><div id="easy" class="rating-passive" data-rating="0"><a class="stars"></a></div></li>
                     <li class="sidebar-brand">Accesibility</li>
-                    <li class="sidebar-brand"><div id="accesibility"class="rating-passive" data-rating=""><a class="stars"></a></div></li>
+                    <li class="sidebar-brand"><div id="accesibility" class="rating-passive" data-rating="0"><a class="stars"></a></div></li>
                     <li class="sidebar-brand">Ambiance</li>
-                    <li class="sidebar-brand"><div id="ambiance" class="rating-passive" data-rating=""><a class="stars"></a></div></li>
+                    <li class="sidebar-brand"><div id="ambiance" class="rating-passive" data-rating="0"><a class="stars"></a></div></li>
                     <li class="sidebar-brand">Friendly Staff</li>
-                    <li class="sidebar-brand"><div id="staff" class="rating-passive" data-rating=""><a class="stars"></a></div></li>
+                    <li class="sidebar-brand"><div id="staff" class="rating-passive" data-rating="0"><a class="stars"></a></div></li>
                     <li class="sidebar-brand">Food</li>
-                    <li class="sidebar-brand"><div id="food" class="rating-passive" data-rating=""><a class="stars"></a></div></li>
+                    <li class="sidebar-brand"><div id="food" class="rating-passive" data-rating="0"><a class="stars"></a></div></li>
                     <li class="sidebar-brand">Noise Level</li>
-                    <li class="sidebar-brand"><div id="noise" class="rating-passive" data-rating=""><a class="stars"></a></div></li>
+                    <li class="sidebar-brand"><div id="noise" class="rating-passive" data-rating="0"><a class="stars"></a></div></li>
                 </ul>
                 <a onclick="closeNav()">Go Back</a>
             </div>
@@ -76,7 +77,7 @@
                         </h2>
                     </div>
                     <!-- map -->
-                    <div class="hero-section full-screen has-map ">
+                    <div class="hero-section full-screen has-map " id="mapLabel">
                         <div class="map-wrapper">
                             <div class="geo-location">
                                 <i class="fa fa-map-marker"></i>
@@ -89,7 +90,7 @@
                             <div class="form search-form horizontal" style="border-width:10px;">
                                 <form>
                                     <div class="input-group">
-                                        <input class="form-control" name="email" placeholder="What are you looking for?" type="text">
+                                        <input class="form-control" name="name" placeholder="What are you looking for?" type="text" style="background-color:white; color:black;">
                                         <span class="input-group-btn">
                                             <button class="btn btn-default" type="submit"><i class="arrow_right"></i></button>
                                         </span>
@@ -105,7 +106,10 @@
                         <div class="container col-md-12 col-sm-12 col-xs-12">
                             <div class="center">
                                 <div class="section-title">
-                                    <div class="center">
+                                    <div class="row">
+                                        <button class="btn btn-default">Cafe</button>
+                                        <button class="btn btn-default">Cafe</button>
+                                        <button class="btn btn-default">Cafe</button>
                                         <button class="btn btn-default">Cafe</button>
                                     </div>
                                 </div>
@@ -113,15 +117,18 @@
                             </div>
                             <!--end center-->
                             <div class="row ">
+
                                 <?php
-                                foreach ($cafe as $value): $id = $value->cafe_survey_common_id;
+                                foreach ($cafe as $value):
+                                    $id = $value->cafe_survey_common_id;
+                                    $name=$value->name;
                                     $easytodfind = 0;
                                     $accesibility = 0;
                                     $ambiance = 0;
                                     $staff = 0;
                                     $food = 0;
                                     $noise = 0;
-                                    $img = "https://maps.googleapis.com/maps/api/streetview?size=640x640&location=" . $value->lat . "," . $value->lng . "7&key=AIzaSyBaDWhE5AeN2ar9Nz1bqDvzNQWJcj-iqjU";
+                                    $avgRating=0;
                                     foreach ($cafeRating as $rating):
                                         if ($rating->cafe_survey_common_id == $id) {
                                             if ($rating->grade_type_id == 1) {
@@ -139,25 +146,21 @@
                                             }
                                         }
                                     endforeach;
+                                    foreach($cafeRatingAverage as $avg):
+                                        if ($avg->cafe_survey_common_id == $id) {
+                                       $avgRating=$avg->average;
+                                       }
+                                    endforeach;
                                     ?>
-                                    <script>
-                                        var easytofind = "<?php echo $easytofind; ?>";
-                                        var accesibility = "<?php echo $accesibility; ?>";
-                                        var ambiance = "<?php echo $ambiance; ?>";
-                                        var staff = "<?php echo $staff; ?>";
-                                        var food = "<?php echo $food; ?>";
-                                        var noise = "<?php echo $noise; ?>";
-                                        var img = "<?php echo $img; ?>";
-                                    </script>
                                     <div class="itemTab col-md-4 col-sm-4 col-xs-4">
                                         <div class="item">
-                                            <a  onclick="openNav(easytofind, accesibility, ambiance, staff, food, noise, img)">
+                                            <a  onclick="openNav('<?php echo $name; ?>','<?php echo $easytofind; ?>',  '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>','<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>')">
                                                 <div class="description">
                                                     <figure></figure>
                                                     <div class="label label-default">Cafe</div>
-                                                    <h3><?php echo $value->name; ?></h3>
+                                                    <h3><?php echo $name; ?></h3>
                                                     <h4><?php echo $value->address; ?></h4>
-    <?php echo $value->city; ?>
+                                                    <?php echo $value->city; ?>
                                                 </div>
                                                 <!--end description-->
                                                 <div class="image bg-transfer">
@@ -166,13 +169,13 @@
                                                 <!--end image-->
                                             </a>
                                             <div class="additional-info">
-                                                <div class="rating-passive" data-rating="">
+                                                <div class="rating-passive" data-rating="<?php echo $avgRating;?>">
                                                     <span class="stars"></span>
                                                 </div>
                                                 <div class="controls-more">
                                                     <ul>
-                                                        <li><a onclick="openNav(easytofind, accesibility, ambiance, staff, food, noise, img)">Details</a></li>
-                                                        <li><a href="#">Show On Map</a></li>
+                                                        <li><a onclick="openNav('<?php echo $name; ?>','<?php echo $easytofind; ?>',  '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>','<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>'  )">Details</a></li>
+                                                        <li><a href="#mapLabel" onclick="heroMap('<?php echo $value->lat; ?>','<?php echo $value->lng; ?>',"map-homepage","modal","modal",false, 16)">Show On Map</a></li>
                                                         <li><a href="#">Get Direction</a></li>
                                                     </ul>
                                                 </div>
@@ -182,7 +185,7 @@
                                         </div>
                                         <!--end item-->
                                     </div>
-<?php endforeach; ?>
+                                    <?php endforeach; ?>
                             </div>
                             <!--end row-->
                             <!--end center-->
@@ -246,17 +249,19 @@
             </div>
         </div>
         <script>
-            function openNav(easytofind, accesibility, ambiance, staff, food, noise, img) {
+            function openNav(name,easytofind, accesibility, ambiance, staff, food, noise, lat, lng) {
                 closeNav();
                 document.getElementById("sidebar-wrapper").style.width = "30%";
                 document.getElementById("main").style.marginLeft = "30vw";
                 document.getElementById("main").style.width = "70vw";
+                document.getElementById("sidebar-name").innerHTML= name;
                 $('.itemTab').removeClass("col-md-4 col-xs-4 col-sm-4").addClass("col-md-3 col-xs-3 col-sm-3");
                 $('.container').removeClass("col-md-12 col-xs-12 col-sm-12").addClass("col-md-11 col-xs-11 col-sm-11");
+                var img ="https://maps.googleapis.com/maps/api/streetview?size=640x640&location=" +lat +"," + lng +"7&key=AIzaSyBaDWhE5AeN2ar9Nz1bqDvzNQWJcj-iqjU"
                 $("#sidebar-image").attr("src", img);
-                // window.alert();
-            }
-            /* Set the width of the side navigation to 0 */
+                // window.alert(img);
+                $("#easy").attr("data-rating", easytofind);
+               }
             function closeNav() {
                 document.getElementById("sidebar-wrapper").style.width = "0";
                 document.getElementById("main").style.marginLeft = "0";
