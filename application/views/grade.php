@@ -27,6 +27,7 @@
         <script type="text/javascript" src="<?php echo base_url(); ?>js/jquery.trackpad-scroll-emulator.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>js/custom.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>js/maps.js"></script>
+        <link rel="icon" type="image/png" href="<?php echo base_url(); ?>img/grade-icon-36x36.png" />
         <title>Grade</title>
     </head>
     <body class="homepage">
@@ -53,26 +54,27 @@
                 <ul id="sidebar-nav" style="list-style:none">
                     <li class="sidebar-brand"><img id="sidebar-image" class="img-responsive" src="" alt="COULD NOT LOAD IMAGE"></li>
                     <li class="sidebar-brand"><b id="sidebar-name"></b></li>
+                    <li class="sidebar-brand"><b id="sidebar-addrs"></b></li>
+                    <li class="sidebar-brand"><b id="sidebar-city"></b></li>
                     <li class="sidebar-brand">Easy to Find    <a onclick="closeNav()" class="close" aria-label="Close"> <span aria-hidden="true">&times;</span></a></li>
-                    <li class="sidebar-brand"><div id="easy" class="rating-passive" data-rating="0"><a class="stars"></a></div></li>
+                    <li class="sidebar-brand"><span id="easytofind" class="stars" data-rating="" data-num-stars="5" ></span></li>
                     <li class="sidebar-brand">Accesibility</li>
-                    <li class="sidebar-brand"><div id="accesibility" class="rating-passive" data-rating="0"><a class="stars"></a></div></li>
+                    <li class="sidebar-brand"><span id="accesibility" class="stars" data-rating="" data-num-stars="5" ></span></li>
                     <li class="sidebar-brand">Ambiance</li>
-                    <li class="sidebar-brand"><div id="ambiance" class="rating-passive" data-rating="0"><a class="stars"></a></div></li>
+                    <li class="sidebar-brand"><span id="ambiance" class="stars" data-rating="" data-num-stars="5" ></span></li>
                     <li class="sidebar-brand">Friendly Staff</li>
-                    <li class="sidebar-brand"><div id="staff" class="rating-passive" data-rating="0"><a class="stars"></a></div></li>
+                    <li class="sidebar-brand"><span id="staff" class="stars" data-rating="" data-num-stars="5" ></span></li>
                     <li class="sidebar-brand">Food</li>
-                    <li class="sidebar-brand"><div id="food" class="rating-passive" data-rating="0"><a class="stars"></a></div></li>
+                    <li class="sidebar-brand"><span id="food" class="stars" data-rating="" data-num-stars="5" ></span></li>
                     <li class="sidebar-brand">Noise Level</li>
-                    <li class="sidebar-brand"><div id="noise" class="rating-passive" data-rating="0"><a class="stars"></a></div></li>
+                    <li class="sidebar-brand"><span id="noise" class="stars" data-rating="" data-num-stars="5" ></span></li>
                 </ul>
-                <a onclick="closeNav()">Go Back</a>
             </div>
-            <div id="page-content">
+            <div id="page-content container-fluid whole">
                 <div id="main">
                     <div class="firstPage" style="background-color:#4D4D70; height:85vh; margin-bottom:10vh;padding-top:30vh;">
-                        <h1 style="color:#FFFFFF; text-align:center; font-size:54px;margin-top: 5px;margin-bottom: 10px;font-family:Tahoma,Verdana,sans-serif;line-height: 1.1; font-weight:bold;">Welcome to Grade</h1>
-                        <h2 style="color:white,opacity: 0.5; text-align:center;color: #fff;font-size: 24px;font-weight: normal;margin-top: 5px;margin-bottom: 10px;font-family: font-family: Tahoma,Verdana,sans-serif;line-height: 1.1;">
+                        <h1 style="color:#FFFFFF; text-align:center; font-size:54px;margin-top: 5px;margin-bottom: 10px; font-family:Tahoma,Verdana,sans-serif;line-height: 1.1; font-weight:bold;">Welcome to Grade</h1>
+                        <h2 style="color:white,opacity: 0.5; text-align:center;color: #fff;font-size: 24px;font-weight: normal;margin-top: 5px;margin-bottom: 10px;font-family: Tahoma,Verdana,sans-serif;line-height: 1.1;">
                             Grade is a universal social accessibility tool for people with disabilities. We map and grade accessible places around the country to promote equal access for everyone. We share our finding with everyone. We orgnize and ask public officials to make changes, most importanly, we go out and have fun. Grade is run by the awesome people at Cidny
                         </h2>
                     </div>
@@ -121,14 +123,14 @@
                                 <?php
                                 foreach ($cafe as $value):
                                     $id = $value->cafe_survey_common_id;
-                                    $name=$value->name;
+                                    $name = $value->name;
                                     $easytodfind = 0;
                                     $accesibility = 0;
                                     $ambiance = 0;
                                     $staff = 0;
                                     $food = 0;
                                     $noise = 0;
-                                    $avgRating=0;
+                                    $avgRating = 0;
                                     foreach ($cafeRating as $rating):
                                         if ($rating->cafe_survey_common_id == $id) {
                                             if ($rating->grade_type_id == 1) {
@@ -146,15 +148,15 @@
                                             }
                                         }
                                     endforeach;
-                                    foreach($cafeRatingAverage as $avg):
+                                    foreach ($cafeRatingAverage as $avg):
                                         if ($avg->cafe_survey_common_id == $id) {
-                                       $avgRating=$avg->average;
-                                       }
+                                            $avgRating = $avg->average;
+                                        }
                                     endforeach;
                                     ?>
                                     <div class="itemTab col-md-4 col-sm-4 col-xs-4">
                                         <div class="item">
-                                            <a  onclick="openNav('<?php echo $name; ?>','<?php echo $easytofind; ?>',  '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>','<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>')">
+                                            <a  onclick="openNav('<?php echo $name; ?>', '<?php echo $easytofind; ?>', '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>', '<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>', '<?php echo $value->address; ?>', '<?php echo $value->city; ?>')">
                                                 <div class="description">
                                                     <figure></figure>
                                                     <div class="label label-default">Cafe</div>
@@ -169,13 +171,13 @@
                                                 <!--end image-->
                                             </a>
                                             <div class="additional-info">
-                                                <div class="rating-passive" data-rating="<?php echo $avgRating;?>">
+                                                <div class="rating-passive" data-rating="<?php echo $avgRating; ?>">
                                                     <span class="stars"></span>
                                                 </div>
                                                 <div class="controls-more">
                                                     <ul>
-                                                        <li><a onclick="openNav('<?php echo $name; ?>','<?php echo $easytofind; ?>',  '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>','<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>'  )">Details</a></li>
-                                                        <li><a href="#mapLabel" onclick="heroMap('<?php echo $value->lat; ?>','<?php echo $value->lng; ?>',"map-homepage","modal","modal",false, 16)">Show On Map</a></li>
+                                                        <li><a onclick="openNav('<?php echo $name; ?>', '<?php echo $easytofind; ?>', '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>', '<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>', '<?php echo $value->address; ?>', '<?php echo $value->city; ?>')">Details</a></li>
+                                                        <li><a href="#mapLabel" onclick="heroMap('<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>',"map-homepage","modal","modal",false, 16)">Show On Map</a></li>
                                                         <li><a href="#">Get Direction</a></li>
                                                     </ul>
                                                 </div>
@@ -185,7 +187,7 @@
                                         </div>
                                         <!--end item-->
                                     </div>
-                                    <?php endforeach; ?>
+                                <?php endforeach; ?>
                             </div>
                             <!--end row-->
                             <!--end center-->
@@ -249,19 +251,27 @@
             </div>
         </div>
         <script>
-            function openNav(name,easytofind, accesibility, ambiance, staff, food, noise, lat, lng) {
+
+            function openNav(name, easytofind, accesibility, ambiance, staff, food, noise, lat, lng, addrs, city) {
                 closeNav();
                 document.getElementById("sidebar-wrapper").style.width = "30%";
                 document.getElementById("main").style.marginLeft = "30vw";
                 document.getElementById("main").style.width = "70vw";
-                document.getElementById("sidebar-name").innerHTML= name;
+                document.getElementById("sidebar-name").innerHTML = name;
+                document.getElementById("sidebar-addrs").innerHTML = addrs;
+                document.getElementById("sidebar-city").innerHTML = city;
                 $('.itemTab').removeClass("col-md-4 col-xs-4 col-sm-4").addClass("col-md-3 col-xs-3 col-sm-3");
                 $('.container').removeClass("col-md-12 col-xs-12 col-sm-12").addClass("col-md-11 col-xs-11 col-sm-11");
-                var img ="https://maps.googleapis.com/maps/api/streetview?size=640x640&location=" +lat +"," + lng +"7&key=AIzaSyBaDWhE5AeN2ar9Nz1bqDvzNQWJcj-iqjU"
+                var img = "https://maps.googleapis.com/maps/api/streetview?size=640x300&location=" + lat + "," + lng + "7&key=AIzaSyBaDWhE5AeN2ar9Nz1bqDvzNQWJcj-iqjU"
                 $("#sidebar-image").attr("src", img);
-                // window.alert(img);
-                $("#easy").attr("data-rating", easytofind);
-               }
+                $('#easytofind').stars(easytofind);
+                $('#accesibility').stars(accesibility);
+                $('#ambiance').stars(ambiance);
+                $('#staff').stars(staff);
+                $('#food').stars(food);
+                $('#noise').stars(noise);
+            }
+
             function closeNav() {
                 document.getElementById("sidebar-wrapper").style.width = "0";
                 document.getElementById("main").style.marginLeft = "0";
@@ -269,6 +279,18 @@
                 $('.itemTab').removeClass("col-md-3 col-xs-3 col-sm-3").addClass("col-md-4 col-xs-4 col-sm-4");
                 $('.container').removeClass("col-md-11 col-xs-11 col-sm-11").addClass("col-md-12 col-xs-12 col-sm-12");
             }
+
+            $.fn.stars = function (value) {
+                return $(this).each(function () {
+                    var rating = parseInt(value);
+                    var numStars = $(this).data("numStars");
+                    var fullStar = new Array(Math.floor(rating + 1)).join('<i class="fa fa-star"></i>');
+                    var halfStar = ((rating % 1) !== 0) ? '<i class="fa fa-star-half-empty"></i>' : '';
+                    var noStar = new Array(Math.floor(numStars + 1 - rating)).join('<i class="fa fa-star-o"></i>');
+                    $(this).html(fullStar + halfStar + noStar);
+                });
+            }
+
         </script>
     </div>
 </body>
