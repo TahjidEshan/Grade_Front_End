@@ -112,15 +112,16 @@
                                     });
                                 }
                             }
-                            function setMarker(lat, lng) {
+                            function setMarker(lat, lng, name) {
                                 var marker = new google.maps.Marker({
                                     position: new google.maps.LatLng(lat, lng),
-                                    map: map
+                                    map: map,
+                                    label: name
                                 });
 
                             }
                             setMap();
-                            setMarker(40.732714, -73.991393);
+                            setMarker(40.732714, -73.991393, "CIDNY");
                         </script>
                         <!--end map-wrapper-->
                         <!--end results-wrapper-->
@@ -221,7 +222,7 @@
                                                 </div>
                                                 <!--end additional-info-->
                                                 <script>
-                                                    setMarker(parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>'));
+                                                    setMarker(parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>'),'<?php echo $name; ?>');
                                                 </script>
                                             </div>
                                             <!--end item-->
