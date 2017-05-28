@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="en-US">
     <head>
         <meta charset="UTF-8">
@@ -240,7 +240,7 @@
                                             <!--end item-->
                                         </div>
                                     <?php endforeach; ?>
-                                </div>
+                                </div></div>
                                 <!-- Cafe Ends -->
                                 <div id="bar">Bar</div>
                                 <!-- Bar Ends -->
@@ -249,7 +249,6 @@
                                 <div id="pollsite">Poll</div>
                                 <!-- Poll Site Ends -->
                             </div>
-                        </div>
                         <!--end container-->
                     </section>
                     <!--end block-->
