@@ -204,19 +204,19 @@
                             <div class="center">
                                 <div class="section-title">
                                     <div class="row">
-                                        <button class="btn btn-default" onclick="$('#restaurant').hide();
+                                        <button class="btn btn-default icon shadow topButton" onclick="$('#restaurant').hide();
                                                 $('#bar').hide();
                                                 $('#pollsite').hide();
                                                 $('#cafe').fadeIn(500);"> <i class="fa fa-coffee" aria-hidden="true"></i> &nbsp;Cafe</button>
-                                        <button class="btn btn-default" onclick="$('#restaurant').hide();
+                                        <button class="btn btn-default icon shadow topButton" onclick="$('#restaurant').hide();
                                                 $('#bar').fadeIn(500);
                                                 $('#pollsite').hide();
                                                 $('#cafe').hide();"><i class="fa fa-glass" aria-hidden="true"></i> &nbsp; Bar</button>
-                                        <button class="btn btn-default" onclick="$('#restaurant').fadeIn(500);
+                                        <button class="btn btn-default icon shadow topButton" onclick="$('#restaurant').fadeIn(500);
                                                 $('#bar').hide();
                                                 $('#pollsite').hide();
                                                 $('#cafe').hide();"><i class="fa fa-cutlery" aria-hidden="true"></i>&nbsp; Restaurant</button>
-                                        <button class="btn btn-default" onclick="$('#restaurant').hide();
+                                        <button class="btn btn-default icon shadow topButton" onclick="$('#restaurant').hide();
                                                 $('#bar').hide();
                                                 $('#pollsite').fadeIn(500);
                                                 $('#cafe').hide();"><i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp; Poll SIte</button>
@@ -556,25 +556,25 @@
                                         <div class="row">
                                             <div class="col-md-4 col-sm-4">
                                                 <div class="form-group">
-                                                    <label for="name">Name</label>
+                                                    <label for="name"><strong>Name</strong></label>
                                                     <input class="form-control" name="name" id="name" type="text">
                                                 </div>
                                             </div>
                                             <div class="col-md-4 col-sm-4">
                                                 <div class="form-group">
-                                                    <label for="email">Email</label>
+                                                    <label for="email"><strong>Email</strong></label>
                                                     <input class="form-control" name="email" id="email" type="email">
                                                 </div>
                                             </div>
                                             <div class="col-md-4 col-sm-4">
                                                 <div class="form-group">
-                                                    <label for="subject">Subject</label>
+                                                    <label for="subject"><strong>Subject</strong></label>
                                                     <input class="form-control" name="subject" id="subject" type="text">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="message">Message</label>
+                                            <label for="message"><strong>Message</strong></label>
                                             <textarea class="form-control" id="message" rows="4" name="message"></textarea>
                                         </div>
                                         <div class="form-group">
