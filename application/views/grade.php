@@ -17,7 +17,7 @@
         <script type="text/javascript" src="<?php echo base_url(); ?>js/jquery-migrate-1.2.1.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>bootstrap/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>js/bootstrap-select.min.js"></script>
-        <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyBEDfNcQRmKQEyulDN8nGWjLYPm8s4YB58&libraries=places"></script>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyDvKO17zrM_l7NMCaw35GxI6VQbW896qJA &libraries=places"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>js/richmarker-compiled.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>js/markerclusterer_packed.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>js/infobox.js"></script>
@@ -224,7 +224,7 @@
                                 </div>
                                 <!--end section-title-->
                             </div>
-                            <hr style="margin-top:-50px;height:1px;border:1px;color:#4d4d70;background-color:#4d4d70;">
+                            <hr style="margin-top:-50px;height:px;border:1px;color:#4d4d70;background-color:#4d4d70;">
                             <div id="cafe">
                                 <div class="row ">
                                     <?php
@@ -273,7 +273,7 @@
                                                     </div>
                                                     <!--end description-->
                                                     <div class="image bg-transfer">
-                                                        <img class="img-responsive" src="https://maps.googleapis.com/maps/api/streetview?size=640x340&location=<?php echo $value->lat; ?>,<?php echo $value->lng; ?>7&key=AIzaSyBaDWhE5AeN2ar9Nz1bqDvzNQWJcj-iqjU" alt="">
+                                                        <img class="img-responsive" src="https://maps.googleapis.com/maps/api/streetview?size=640x340&location=<?php echo $value->lat; ?>,<?php echo $value->lng; ?>7&key=AIzaSyDvKO17zrM_l7NMCaw35GxI6VQbW896qJA " alt="">
                                                     </div>
                                                     <!--end image-->
                                                 </a>
@@ -349,7 +349,7 @@
                                                     </div>
                                                     <!--end description-->
                                                     <div class="image bg-transfer">
-                                                        <img class="img-responsive" src="https://maps.googleapis.com/maps/api/streetview?size=640x340&location=<?php echo $value->lat; ?>,<?php echo $value->lng; ?>7&key=AIzaSyBaDWhE5AeN2ar9Nz1bqDvzNQWJcj-iqjU" alt="">
+                                                        <img class="img-responsive" src="https://maps.googleapis.com/maps/api/streetview?size=640x340&location=<?php echo $value->lat; ?>,<?php echo $value->lng; ?>7&key=AIzaSyDvKO17zrM_l7NMCaw35GxI6VQbW896qJA " alt="">
                                                     </div>
                                                     <!--end image-->
                                                 </a>
@@ -425,7 +425,7 @@
                                                     </div>
                                                     <!--end description-->
                                                     <div class="image bg-transfer">
-                                                        <img class="img-responsive" src="https://maps.googleapis.com/maps/api/streetview?size=640x340&location=<?php echo $value->lat; ?>,<?php echo $value->lng; ?>7&key=AIzaSyBaDWhE5AeN2ar9Nz1bqDvzNQWJcj-iqjU" alt="">
+                                                        <img class="img-responsive" src="https://maps.googleapis.com/maps/api/streetview?size=640x340&location=<?php echo $value->lat; ?>,<?php echo $value->lng; ?>7&key=AIzaSyDvKO17zrM_l7NMCaw35GxI6VQbW896qJA " alt="">
                                                     </div>
                                                     <!--end image-->
                                                 </a>
@@ -502,7 +502,7 @@
                                                     </div>
                                                     <!--end description-->
                                                     <div class="image bg-transfer">
-                                                        <img class="img-responsive" src="https://maps.googleapis.com/maps/api/streetview?size=640x340&location=<?php echo $value->lat; ?>,<?php echo $value->lng; ?>7&key=AIzaSyBaDWhE5AeN2ar9Nz1bqDvzNQWJcj-iqjU" alt="">
+                                                        <img class="img-responsive" src="https://maps.googleapis.com/maps/api/streetview?size=640x340&location=<?php echo $value->lat; ?>,<?php echo $value->lng; ?>7&key=AIzaSyDvKO17zrM_l7NMCaw35GxI6VQbW896qJA " alt="">
                                                     </div>
                                                     <!--end image-->
                                                 </a>
@@ -654,7 +654,7 @@
                 document.getElementById("sidebar-city").innerHTML = city;
                 // $('.itemTab').removeClass("col-md-4 col-xs-4 col-sm-4").addClass("col-md-3 col-xs-3 col-sm-3");
                 // $('.container').removeClass("col-md-12 col-xs-12 col-sm-12").addClass("col-md-11 col-xs-11 col-sm-11");
-                var img = "https://maps.googleapis.com/maps/api/streetview?size=640x450&location=" + lat + "," + lng + "7&key=AIzaSyBaDWhE5AeN2ar9Nz1bqDvzNQWJcj-iqjU"
+                var img = "https://maps.googleapis.com/maps/api/streetview?size=640x450&location=" + lat + "," + lng + "7&key=AIzaSyDvKO17zrM_l7NMCaw35GxI6VQbW896qJA "
                 $("#sidebar-image").attr("src", img);
                 $('#easytofind').stars(easytofind);
                 $('#accesibility').stars(accesibility);
