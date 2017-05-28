@@ -87,6 +87,11 @@
                             <div class="map" id="map-homepage"></div>
                         </div>
                         <script>
+                            $(document).ready(function () {
+                                $("#restaurant").hide();
+                                $("#bar").hide();
+                                $("#pollsite").hide();
+                            });
                             var map;
                             var optimizedDatabaseLoading = 0;
                             var _latitude = 40.732714;
@@ -154,17 +159,16 @@
                             <div class="center">
                                 <div class="section-title">
                                     <div class="row">
-                                        <button class="btn btn-default"> <i class="fa fa-coffee" aria-hidden="true"></i> &nbsp;Cafe</button>
-                                        <button class="btn btn-default"><i class="fa fa-glass" aria-hidden="true"></i> &nbsp; Bar</button>
-                                        <button class="btn btn-default"><i class="fa fa-cutlery" aria-hidden="true"></i>&nbsp; Restaurant</button>
-                                        <button class="btn btn-default"><i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp; Poll SIte</button>
+                                        <button class="btn btn-default" onclick="$('#restaurant').hide();$('#bar').hide();$('#pollsite').hide();$('#cafe').fadeIn(500);"> <i class="fa fa-coffee" aria-hidden="true"></i> &nbsp;Cafe</button>
+                                        <button class="btn btn-default" onclick="$('#restaurant').hide();$('#bar').fadeIn(500);$('#pollsite').hide();$('#cafe').hide();"><i class="fa fa-glass" aria-hidden="true"></i> &nbsp; Bar</button>
+                                        <button class="btn btn-default" onclick="$('#restaurant').fadeIn(500);$('#bar').hide();$('#pollsite').hide();$('#cafe').hide();"><i class="fa fa-cutlery" aria-hidden="true"></i>&nbsp; Restaurant</button>
+                                        <button class="btn btn-default" onclick="$('#restaurant').hide();$('#bar').hide();$('#pollsite').fadeIn(500);$('#cafe').hide();"><i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp; Poll SIte</button>
                                     </div>
                                 </div>
                                 <!--end section-title-->
                             </div>
-                            <div class="cafe">
-                                  <div class="row ">
-
+                            <div id="cafe">
+                                <div class="row ">
                                     <?php
                                     foreach ($cafe as $value):
                                         $id = $value->cafe_survey_common_id;
@@ -236,14 +240,14 @@
                                             <!--end item-->
                                         </div>
                                     <?php endforeach; ?>
-                            </div>
-                            <!-- Cafe Ends -->
-                            <div class="bar"></div>
-                            <!-- Bar Ends -->
-                            <div class="restaurant"></div>
-                            <!-- Restaurant Ends -->
-                            <div class="pollsite"></div>
-                            <!-- Poll Site Ends -->
+                                </div>
+                                <!-- Cafe Ends -->
+                                <div id="bar">Bar</div>
+                                <!-- Bar Ends -->
+                                <div id="restaurant">Res</div>
+                                <!-- Restaurant Ends -->
+                                <div id="pollsite">Poll</div>
+                                <!-- Poll Site Ends -->
                             </div>
                         </div>
                         <!--end container-->
