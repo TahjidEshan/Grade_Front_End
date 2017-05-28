@@ -7597,3 +7597,19 @@ padding-right:10px;
 .info{
   margin:left:-10%;
 }
+.btn-topButton
+{
+  color:#fafafa;
+  background:#4d4d70;
+}
+.btn-topButton:hover
+{
+  color:black;
+  background:#fff;
+}
+.btn-topButton:active,
+.btn-topButton:focus,
+.btn-topButton:visited{
+  color:black;
+  background:#e7ecea;
+}

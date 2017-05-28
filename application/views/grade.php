@@ -204,19 +204,19 @@
                             <div class="center">
                                 <div class="section-title">
                                     <div class="row">
-                                        <button class="btn btn-default icon shadow topButton" onclick="$('#restaurant').hide();
+                                        <button class="btn  btn-topButton" onclick="$('#restaurant').hide();
                                                 $('#bar').hide();
                                                 $('#pollsite').hide();
                                                 $('#cafe').fadeIn(500);"> <i class="fa fa-coffee" aria-hidden="true"></i> &nbsp;Cafe</button>
-                                        <button class="btn btn-default icon shadow topButton" onclick="$('#restaurant').hide();
+                                        <button class="btn btn-topButton" onclick="$('#restaurant').hide();
                                                 $('#bar').fadeIn(500);
                                                 $('#pollsite').hide();
                                                 $('#cafe').hide();"><i class="fa fa-glass" aria-hidden="true"></i> &nbsp; Bar</button>
-                                        <button class="btn btn-default icon shadow topButton" onclick="$('#restaurant').fadeIn(500);
+                                        <button class="btn  btn-topButton" onclick="$('#restaurant').fadeIn(500);
                                                 $('#bar').hide();
                                                 $('#pollsite').hide();
                                                 $('#cafe').hide();"><i class="fa fa-cutlery" aria-hidden="true"></i>&nbsp; Restaurant</button>
-                                        <button class="btn btn-default icon shadow topButton" onclick="$('#restaurant').hide();
+                                        <button class="btn btn-topButton" onclick="$('#restaurant').hide();
                                                 $('#bar').hide();
                                                 $('#pollsite').fadeIn(500);
                                                 $('#cafe').hide();"><i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp; Poll SIte</button>
