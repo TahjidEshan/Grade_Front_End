@@ -88,40 +88,48 @@
                         </div>
                         <script>
                             var map;
-                            function setMap() {
-                                var optimizedDatabaseLoading = 0;
-                                var _latitude = 40.732714;
-                                var _longitude = -73.991393;
-                                var element = "map-homepage";
-                                var mapDefaultZoom = 12; // default zoom
-                                // heroMap(_latitude, _longitude, element, markerTarget, sidebarResultTarget, showMarkerLabels, mapDefaultZoom);
-                                if (document.getElementById(element) != null) {
-                                    if (!mapDefaultZoom) {
-                                        mapDefaultZoom = 14;
-                                    }
-
-                                    if (!optimizedDatabaseLoading) {
-                                        var optimizedDatabaseLoading = 0;
-                                    }
-                                    map = new google.maps.Map(document.getElementById(element), {
-                                        zoom: mapDefaultZoom,
-                                        scrollwheel: false,
-                                        center: new google.maps.LatLng(_latitude, _longitude),
-                                        mapTypeId: "roadmap",
-                                        styles: [{"featureType": "administrative", "elementType": "labels.text.fill", "stylers": [{"color": "#c6c6c6"}]}, {"featureType": "landscape", "elementType": "all", "stylers": [{"color": "#f2f2f2"}]}, {"featureType": "poi", "elementType": "all", "stylers": [{"visibility": "off"}]}, {"featureType": "road", "elementType": "all", "stylers": [{"saturation": -100}, {"lightness": 45}]}, {"featureType": "road.highway", "elementType": "all", "stylers": [{"visibility": "simplified"}]}, {"featureType": "road.highway", "elementType": "geometry.fill", "stylers": [{"color": "#ffffff"}]}, {"featureType": "road.arterial", "elementType": "labels.icon", "stylers": [{"visibility": "off"}]}, {"featureType": "transit", "elementType": "all", "stylers": [{"visibility": "off"}]}, {"featureType": "water", "elementType": "all", "stylers": [{"color": "#dde6e8"}, {"visibility": "on"}]}]
-                                    });
+                            var optimizedDatabaseLoading = 0;
+                            var _latitude = 40.732714;
+                            var _longitude = -73.991393;
+                            var element = "map-homepage";
+                            var mapDefaultZoom = 12;
+                            if (document.getElementById(element) != null) {
+                                if (!mapDefaultZoom) {
+                                    mapDefaultZoom = 14;
                                 }
+
+                                if (!optimizedDatabaseLoading) {
+                                    var optimizedDatabaseLoading = 0;
+                                }
+                                map = new google.maps.Map(document.getElementById(element), {
+                                    zoom: mapDefaultZoom,
+                                    scrollwheel: false,
+                                    center: new google.maps.LatLng(_latitude, _longitude),
+                                    mapTypeId: "roadmap",
+                                    styles: [{"featureType": "administrative", "elementType": "labels.text.fill", "stylers": [{"color": "#c6c6c6"}]}, {"featureType": "landscape", "elementType": "all", "stylers": [{"color": "#f2f2f2"}]}, {"featureType": "poi", "elementType": "all", "stylers": [{"visibility": "off"}]}, {"featureType": "road", "elementType": "all", "stylers": [{"saturation": -100}, {"lightness": 45}]}, {"featureType": "road.highway", "elementType": "all", "stylers": [{"visibility": "simplified"}]}, {"featureType": "road.highway", "elementType": "geometry.fill", "stylers": [{"color": "#ffffff"}]}, {"featureType": "road.arterial", "elementType": "labels.icon", "stylers": [{"visibility": "off"}]}, {"featureType": "transit", "elementType": "all", "stylers": [{"visibility": "off"}]}, {"featureType": "water", "elementType": "all", "stylers": [{"color": "#dde6e8"}, {"visibility": "on"}]}]
+                                });
                             }
-                            function setMarker(lat, lng, name) {
+
+                            function setMarker(lat, lng, name, count) {
+                                var image = '';
+                                if (count == 0) {
+                                    image = "<?php echo base_url(); ?>img/grade-icon-36x36.png";
+                                } else if (count == 1) {
+                                    image = "<?php echo base_url(); ?>img/coffee.resized.png";
+                                }
                                 var marker = new google.maps.Marker({
                                     position: new google.maps.LatLng(lat, lng),
                                     map: map,
-                                    label: name
+                                    label: name,
+                                    icon: image
                                 });
-
                             }
-                            setMap();
-                            setMarker(40.732714, -73.991393, "CIDNY");
+
+                            function showOnMap(lat, lng) {
+                                map.panTo(new google.maps.LatLng(lat, lng));
+                            }
+
+                            setMarker(40.732714, -73.991393, "CIDNY", 0);
                         </script>
                         <!--end map-wrapper-->
                         <!--end results-wrapper-->
@@ -129,7 +137,7 @@
                             <div class="form search-form horizontal" style="border-width:1px;">
                                 <form>
                                     <div class="input-group">
-                                        <input class="form-control"  placeholder="What are you looking for?" type="text" style="background-color:#fff; color:#4d4d70;">
+                                        <input class="form-control"  placeholder="" type="text" style="background-color:#fff; color:#4d4d70;">
                                         <span class="input-group-btn">
                                             <button class="btn btn-default" type="submit"><i class="arrow_right icon-custom"></i></button>
                                         </span>
@@ -155,7 +163,7 @@
                                 <!--end section-title-->
                             </div>
                             <div class="cafe">
-                                <div class="row ">
+                                  <div class="row ">
 
                                     <?php
                                     foreach ($cafe as $value):
@@ -214,7 +222,7 @@
                                                     <div class="controls-more">
                                                         <ul>
                                                             <li><a onclick="openNav('<?php echo $name; ?>', '<?php echo $easytofind; ?>', '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>', '<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>', '<?php echo $value->address; ?>', '<?php echo $value->city; ?>')">Details</a></li>
-                                                            <li><a href="#mapLabel" onclick="heroMap('<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>',"map-homepage","modal","modal",false, 16)">Show On Map</a></li>
+                                                            <li><a href="#mapLabel" onclick="showOnMap('<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>')">Show On Map</a></li>
                                                             <li><a href="#">Get Direction</a></li>
                                                         </ul>
                                                     </div>
@@ -222,14 +230,20 @@
                                                 </div>
                                                 <!--end additional-info-->
                                                 <script>
-                                                    setMarker(parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>'),'<?php echo $name; ?>');
+                                                    setMarker(parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>'), '<?php echo $name; ?>', 1);
                                                 </script>
                                             </div>
                                             <!--end item-->
                                         </div>
                                     <?php endforeach; ?>
-                                </div>
-
+                            </div>
+                            <!-- Cafe Ends -->
+                            <div class="bar"></div>
+                            <!-- Bar Ends -->
+                            <div class="restaurant"></div>
+                            <!-- Restaurant Ends -->
+                            <div class="pollsite"></div>
+                            <!-- Poll Site Ends -->
                             </div>
                         </div>
                         <!--end container-->
@@ -283,14 +297,18 @@
 
             function openNav(name, easytofind, accesibility, ambiance, staff, food, noise, lat, lng, addrs, city) {
                 closeNav();
-                document.getElementById("sidebar-wrapper").style.width = "30%";
-                document.getElementById("main").style.marginLeft = "30vw";
-                document.getElementById("main").style.width = "70vw";
+                document.getElementById("sidebar-wrapper").style.width = "30vw";
+                // document.getElementById("main").style.overflow-y: hidden;
+                // document.getElementById("main").style.overflow-x: hidden;
+                //document.getElementById("main").style.overflow: hidden;
+                // document.getElementById("main").style.pointer-events: none;
+                // document.getElementById("main").style.marginLeft = "30vw";
+                // document.getElementById("main").style.width = "70vw";
                 document.getElementById("sidebar-name").innerHTML = name;
                 document.getElementById("sidebar-addrs").innerHTML = addrs;
                 document.getElementById("sidebar-city").innerHTML = city;
-                $('.itemTab').removeClass("col-md-4 col-xs-4 col-sm-4").addClass("col-md-3 col-xs-3 col-sm-3");
-                $('.container').removeClass("col-md-12 col-xs-12 col-sm-12").addClass("col-md-11 col-xs-11 col-sm-11");
+                // $('.itemTab').removeClass("col-md-4 col-xs-4 col-sm-4").addClass("col-md-3 col-xs-3 col-sm-3");
+                // $('.container').removeClass("col-md-12 col-xs-12 col-sm-12").addClass("col-md-11 col-xs-11 col-sm-11");
                 var img = "https://maps.googleapis.com/maps/api/streetview?size=640x450&location=" + lat + "," + lng + "7&key=AIzaSyBaDWhE5AeN2ar9Nz1bqDvzNQWJcj-iqjU"
                 $("#sidebar-image").attr("src", img);
                 $('#easytofind').stars(easytofind);
@@ -303,10 +321,10 @@
 
             function closeNav() {
                 document.getElementById("sidebar-wrapper").style.width = "0";
-                document.getElementById("main").style.marginLeft = "0";
-                document.getElementById("main").style.width = "100vw";
-                $('.itemTab').removeClass("col-md-3 col-xs-3 col-sm-3").addClass("col-md-4 col-xs-4 col-sm-4");
-                $('.container').removeClass("col-md-11 col-xs-11 col-sm-11").addClass("col-md-12 col-xs-12 col-sm-12");
+                // document.getElementById("main").style.marginLeft = "0";
+                // document.getElementById("main").style.width = "100vw";
+                // $('.itemTab').removeClass("col-md-3 col-xs-3 col-sm-3").addClass("col-md-4 col-xs-4 col-sm-4");
+                // $('.container').removeClass("col-md-11 col-xs-11 col-sm-11").addClass("col-md-12 col-xs-12 col-sm-12");
             }
 
             $.fn.stars = function (value) {
