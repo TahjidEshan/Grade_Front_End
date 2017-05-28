@@ -77,7 +77,7 @@
                     <div class="firstPage" style="background-color:#4D4D70; height:85vh; margin-bottom:10vh;padding-top:30vh;">
                         <h1 style="color:#FFF; text-align:center; font-size:54px;margin-top: 5px;margin-bottom: 10px; font-family:Tahoma,Verdana,sans-serif;line-height: 1.1; font-weight:normal;opacity:1;">Welcome to Grade</h1>
                         <h2 style="opacity: 1; text-align:center;color: #fff;font-size: 24px;font-weight: normal;margin-top: 5px;margin-bottom: 10px;font-family: Tahoma,Verdana,sans-serif;line-height: 1.1;">
-                        Grade is a universal social accessibility tool for people with disabilities. We map and grade accessible places around the country to promote equal access for everyone. We share our finding with everyone. We orgnize and ask public officials to make changes, most importanly, we go out and have fun. Grade is run by the awesome people at Cidny
+                            Grade is a universal social accessibility tool for people with disabilities. We map and grade accessible places around the country to promote equal access for everyone. We share our finding with everyone. We orgnize and ask public officials to make changes, most importanly, we go out and have fun. Grade is run by the awesome people at Cidny
                         </h2>
                     </div>
                     <!-- map -->
@@ -89,92 +89,96 @@
                             <div class="map" id="map-homepage"></div>
                         </div>
                         <script>
-                        $(document).ready(function () {
-                        $("#restaurant").hide();
-                        $("#bar").hide();
-                        $("#pollsite").hide();
-                        });
-                        var map;
-                        var places=[];
-                        function Place(name, addrs,city, lat,lng){
-                        this.name=name;
-                        this.addrs=addrs;
-                        this.city=city;
-                        this.lat=lat;
-                        this.lng=lng;
-                        }
-                        var optimizedDatabaseLoading = 0;
-                        var _latitude = 40.732714;
-                        var _longitude = -73.991393;
-                        var element = "map-homepage";
-                        var mapDefaultZoom = 12;
-                        if (document.getElementById(element) != null) {
-                        if (!mapDefaultZoom) {
-                        mapDefaultZoom = 14;
-                        }
-                        if (!optimizedDatabaseLoading) {
-                        var optimizedDatabaseLoading = 0;
-                        }
-                        map = new google.maps.Map(document.getElementById(element), {
-                        zoom: mapDefaultZoom,
-                        scrollwheel: false,
-                        center: new google.maps.LatLng(_latitude, _longitude),
-                        mapTypeId: "roadmap",
-                        styles: [{"featureType": "administrative", "elementType": "labels.text.fill", "stylers": [{"color": "#c6c6c6"}]}, {"featureType": "landscape", "elementType": "all", "stylers": [{"color": "#f2f2f2"}]}, {"featureType": "poi", "elementType": "all", "stylers": [{"visibility": "off"}]}, {"featureType": "road", "elementType": "all", "stylers": [{"saturation": -100}, {"lightness": 45}]}, {"featureType": "road.highway", "elementType": "all", "stylers": [{"visibility": "simplified"}]}, {"featureType": "road.highway", "elementType": "geometry.fill", "stylers": [{"color": "#ffffff"}]}, {"featureType": "road.arterial", "elementType": "labels.icon", "stylers": [{"visibility": "off"}]}, {"featureType": "transit", "elementType": "all", "stylers": [{"visibility": "off"}]}, {"featureType": "water", "elementType": "all", "stylers": [{"color": "#dde6e8"}, {"visibility": "on"}]}]
-                        });
-                        }
-                        function setMarker(lat, lng, name, count) {
-                        var image = '';
-                        if (count == 0) {
-                        image = "<?php echo base_url(); ?>img/grade-icon-36x36.png";
-                        } else if (count == 1) {
-                        image = "<?php echo base_url(); ?>img/coffee.resized.png";
-                        }else if(count==2){
-                        image = "<?php echo base_url(); ?>img/bar.png";
-                        }
-                        var marker = new google.maps.Marker({
-                        position: new google.maps.LatLng(lat, lng),
-                        map: map,
-                        label: name,
-                        icon: image,
-                        });
-                        }
-                        function showOnMap(lat, lng) {
-                        map.panTo(new google.maps.LatLng(lat, lng));
-                        }
-                        function showOnMap(position) {
-                        map.panTo(position);
-                        }
-                        setMarker(40.732714, -73.991393, "CIDNY", 0);
+                            $(document).ready(function () {
+                                $("#restaurant").hide();
+                                $("#bar").hide();
+                                $("#pollsite").hide();
+                            });
+                            var map;
+                            var places = [];
+                            function Place(name, addrs, city, lat, lng) {
+                                this.name = name;
+                                this.addrs = addrs;
+                                this.city = city;
+                                this.lat = lat;
+                                this.lng = lng;
+                            }
+                            var optimizedDatabaseLoading = 0;
+                            var _latitude = 40.732714;
+                            var _longitude = -73.991393;
+                            var element = "map-homepage";
+                            var mapDefaultZoom = 12;
+                            if (document.getElementById(element) != null) {
+                                if (!mapDefaultZoom) {
+                                    mapDefaultZoom = 14;
+                                }
+                                if (!optimizedDatabaseLoading) {
+                                    var optimizedDatabaseLoading = 0;
+                                }
+                                map = new google.maps.Map(document.getElementById(element), {
+                                    zoom: mapDefaultZoom,
+                                    scrollwheel: false,
+                                    center: new google.maps.LatLng(_latitude, _longitude),
+                                    mapTypeId: "roadmap",
+                                    styles: [{"featureType": "administrative", "elementType": "labels.text.fill", "stylers": [{"color": "#c6c6c6"}]}, {"featureType": "landscape", "elementType": "all", "stylers": [{"color": "#f2f2f2"}]}, {"featureType": "poi", "elementType": "all", "stylers": [{"visibility": "off"}]}, {"featureType": "road", "elementType": "all", "stylers": [{"saturation": -100}, {"lightness": 45}]}, {"featureType": "road.highway", "elementType": "all", "stylers": [{"visibility": "simplified"}]}, {"featureType": "road.highway", "elementType": "geometry.fill", "stylers": [{"color": "#ffffff"}]}, {"featureType": "road.arterial", "elementType": "labels.icon", "stylers": [{"visibility": "off"}]}, {"featureType": "transit", "elementType": "all", "stylers": [{"visibility": "off"}]}, {"featureType": "water", "elementType": "all", "stylers": [{"color": "#dde6e8"}, {"visibility": "on"}]}]
+                                });
+                            }
+                            function setMarker(lat, lng, name, count) {
+                                var image = '';
+                                if (count == 0) {
+                                    image = "<?php echo base_url(); ?>img/grade-icon-36x36.png";
+                                } else if (count == 1) {
+                                    image = "<?php echo base_url(); ?>img/coffee.resized.png";
+                                } else if (count == 2) {
+                                    image = "<?php echo base_url(); ?>img/bar.png";
+                                } else if (count == 3) {
+                                    image = "<?php echo base_url(); ?>img/cutlery.png";
+                                } else if (count == 4) {
+                                    image = "<?php echo base_url(); ?>img/poll.resized.png";
+                                }
+                                var marker = new google.maps.Marker({
+                                    position: new google.maps.LatLng(lat, lng),
+                                    map: map,
+                                    //label: name,
+                                    icon: image,
+                                });
+                            }
+                            function showOnMap(lat, lng) {
+                                map.panTo(new google.maps.LatLng(lat, lng));
+                            }
+                            function showOnMap(position) {
+                                map.panTo(position);
+                            }
+                            setMarker(40.732714, -73.991393, "CIDNY", 0);
                         </script>
                         <script>
-                        var availableTags = [
-                        "ActionScript",
-                        "AppleScript",
-                        "Asp",
-                        "BASIC",
-                        "C",
-                        "C++",
-                        "Clojure",
-                        "COBOL",
-                        "ColdFusion",
-                        "Erlang",
-                        "Fortran",
-                        "Groovy",
-                        "Haskell",
-                        "Java",
-                        "JavaScript",
-                        "Lisp",
-                        "Perl",
-                        "PHP",
-                        "Python",
-                        "Ruby",
-                        "Scala",
-                        "Scheme"
-                        ];
-                        $ ( "#placeinput" ).autocomplete({
-                        source: availableTags
-                        });
+                            var availableTags = [
+                                "ActionScript",
+                                "AppleScript",
+                                "Asp",
+                                "BASIC",
+                                "C",
+                                "C++",
+                                "Clojure",
+                                "COBOL",
+                                "ColdFusion",
+                                "Erlang",
+                                "Fortran",
+                                "Groovy",
+                                "Haskell",
+                                "Java",
+                                "JavaScript",
+                                "Lisp",
+                                "Perl",
+                                "PHP",
+                                "Python",
+                                "Ruby",
+                                "Scala",
+                                "Scheme"
+                            ];
+                            $("#placeinput").autocomplete({
+                                source: availableTags
+                            });
                         </script>
                         <!--end map-wrapper-->
                         <!--end results-wrapper-->
@@ -199,10 +203,19 @@
                             <div class="center">
                                 <div class="section-title">
                                     <div class="row">
-                                        <button class="btn btn-default" onclick="$('#restaurant').hide();$('#bar').hide();$('#pollsite').hide();$('#cafe').fadeIn(500);"> <i class="fa fa-coffee" aria-hidden="true"></i> &nbsp;Cafe</button>
-                                        <button class="btn btn-default" onclick="$('#restaurant').hide();$('#bar').fadeIn(500);$('#pollsite').hide();$('#cafe').hide();"><i class="fa fa-glass" aria-hidden="true"></i> &nbsp; Bar</button>
-                                        <button class="btn btn-default" onclick="$('#restaurant').fadeIn(500);$('#bar').hide();$('#pollsite').hide();$('#cafe').hide();"><i class="fa fa-cutlery" aria-hidden="true"></i>&nbsp; Restaurant</button>
-                                        <button class="btn btn-default" onclick="$('#restaurant').hide();$('#bar').hide();$('#pollsite').fadeIn(500);$('#cafe').hide();"><i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp; Poll SIte</button>
+                                        <button class="btn btn-default" onclick="$('#restaurant').hide();
+                                                $('#bar').hide();
+                                                $('#pollsite').hide();
+                                                $('#cafe').fadeIn(500);"> <i class="fa fa-coffee" aria-hidden="true"></i> &nbsp;Cafe</button>
+                                        <button class="btn btn-default" onclick="$('#restaurant').hide();
+                                                $('#bar').fadeIn(500);$('#pollsite').hide();
+                                                $('#cafe').hide();"><i class="fa fa-glass" aria-hidden="true"></i> &nbsp; Bar</button>
+                                        <button class="btn btn-default" onclick="$('#restaurant').fadeIn(500);$('#bar').hide();
+                                                $('#pollsite').hide();$('#cafe').hide();"><i class="fa fa-cutlery" aria-hidden="true"></i>&nbsp; Restaurant</button>
+                                        <button class="btn btn-default" onclick="$('#restaurant').hide();
+                                                $('#bar').hide();
+                                                $('#pollsite').fadeIn(500);
+                                                $('#cafe').hide();"><i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp; Poll SIte</button>
                                     </div>
                                 </div>
                                 <!--end section-title-->
@@ -211,157 +224,308 @@
                                 <div class="row ">
                                     <?php
                                     foreach ($cafe as $value):
-                                    $id = $value->cafe_survey_common_id;
-                                    $name = $value->name;
-                                    $easytodfind = 0;
-                                    $accesibility = 0;
-                                    $ambiance = 0;
-                                    $staff = 0;
-                                    $food = 0;
-                                    $noise = 0;
-                                    $avgRating = 0;
-                                    foreach ($cafeRating as $rating):
-                                    if ($rating->cafe_survey_common_id == $id) {
-                                    if ($rating->grade_type_id == 1) {
-                                    $easytofind = $rating->rating;
-                                    } else if ($rating->grade_type_id == 2) {
-                                    $accesibility = $rating->rating;
-                                    } else if ($rating->grade_type_id == 3) {
-                                    $ambiance = $rating->rating;
-                                    } else if ($rating->grade_type_id == 4) {
-                                    $staff = $rating->rating;
-                                    } else if ($rating->grade_type_id == 5) {
-                                    $food = $rating->rating;
-                                    } else if ($rating->grade_type_id == 6) {
-                                    $noise = $rating->rating;
-                                    }
-                                    }
-                                    endforeach;
-                                    foreach ($cafeRatingAverage as $avg):
-                                    if ($avg->cafe_survey_common_id == $id) {
-                                    $avgRating = $avg->average;
-                                    }
-                                    endforeach;
-                                    ?>
-                                    <div class="itemTab col-md-4 col-sm-4 col-xs-4">
-                                        <div class="item">
-                                            <a  onclick="openNav('<?php echo addslashes($name); ?>', '<?php echo $easytofind; ?>', '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>', '<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>', '<?php echo addslashes($value->address); ?>', '<?php echo addslashes($value->city); ?>')">
-                                                <div class="description">
-                                                <figure></figure>
-                                                <div class="label label-default">Cafe</div>
-                                                <h3><?php echo $name; ?></h3>
-                                                <h4><?php echo $value->address; ?></h4>
-                                                <?php echo $value->city; ?>
+                                        $id = $value->cafe_survey_common_id;
+                                        $name = $value->name;
+                                        $easytodfind = 0;
+                                        $accesibility = 0;
+                                        $ambiance = 0;
+                                        $staff = 0;
+                                        $food = 0;
+                                        $noise = 0;
+                                        $avgRating = 0;
+                                        foreach ($cafeRating as $rating):
+                                            if ($rating->cafe_survey_common_id == $id) {
+                                                if ($rating->grade_type_id == 1) {
+                                                    $easytofind = $rating->rating;
+                                                } else if ($rating->grade_type_id == 2) {
+                                                    $accesibility = $rating->rating;
+                                                } else if ($rating->grade_type_id == 3) {
+                                                    $ambiance = $rating->rating;
+                                                } else if ($rating->grade_type_id == 4) {
+                                                    $staff = $rating->rating;
+                                                } else if ($rating->grade_type_id == 5) {
+                                                    $food = $rating->rating;
+                                                } else if ($rating->grade_type_id == 6) {
+                                                    $noise = $rating->rating;
+                                                }
+                                            }
+                                        endforeach;
+                                        foreach ($cafeRatingAverage as $avg):
+                                            if ($avg->cafe_survey_common_id == $id) {
+                                                $avgRating = $avg->average;
+                                            }
+                                        endforeach;
+                                        ?>
+                                        <div class="itemTab col-md-4 col-sm-4 col-xs-4">
+                                            <div class="item">
+                                                <a  onclick="openNav('<?php echo addslashes($name); ?>', '<?php echo $easytofind; ?>', '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>', '<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>', '<?php echo addslashes($value->address); ?>', '<?php echo addslashes($value->city); ?>')">
+                                                    <div class="description">
+                                                        <figure></figure>
+                                                        <div class="label label-default">Cafe</div>
+                                                        <h3><?php echo $name; ?></h3>
+                                                        <h4><?php echo $value->address; ?></h4>
+                                                        <?php echo $value->city; ?>
+                                                    </div>
+                                                    <!--end description-->
+                                                    <div class="image bg-transfer">
+                                                        <img class="img-responsive" src="https://maps.googleapis.com/maps/api/streetview?size=640x340&location=<?php echo $value->lat; ?>,<?php echo $value->lng; ?>7&key=AIzaSyBaDWhE5AeN2ar9Nz1bqDvzNQWJcj-iqjU" alt="">
+                                                    </div>
+                                                    <!--end image-->
+                                                </a>
+                                                <div class="additional-info">
+                                                    <div class="rating-passive" data-rating="<?php echo $avgRating; ?>">
+                                                        <span class="stars"></span>
+                                                    </div>
+                                                    <div class="controls-more">
+                                                        <ul>
+                                                            <li><a onclick="openNav('<?php echo addslashes($name); ?>', '<?php echo $easytofind; ?>', '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>', '<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>', '<?php echo addslashes($value->address); ?>', '<?php echo addslashes($value->city); ?>')">Details</a></li>
+                                                            <li><a href="#mapLabel" onclick="showOnMap('<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>')">Show On Map</a></li>
+                                                            <li><a href="#">Get Direction</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <!--end controls-more-->
+                                                </div>
+                                                <!--end additional-info-->
+                                                <script>
+                                                    setMarker(parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>'), '<?php echo addslashes($name); ?>', 1);
+                                                    places.push(new Place('<?php echo addslashes($name); ?>', '<?php echo addslashes($value->address); ?>', '<?php echo addslashes($value->city); ?>', parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>')));
+                                                </script>
                                             </div>
-                                            <!--end description-->
-                                            <div class="image bg-transfer">
-                                                <img class="img-responsive" src="https://maps.googleapis.com/maps/api/streetview?size=640x340&location=<?php echo $value->lat; ?>,<?php echo $value->lng; ?>7&key=AIzaSyBaDWhE5AeN2ar9Nz1bqDvzNQWJcj-iqjU" alt="">
-                                            </div>
-                                            <!--end image-->
-                                        </a>
-                                        <div class="additional-info">
-                                            <div class="rating-passive" data-rating="<?php echo $avgRating; ?>">
-                                                <span class="stars"></span>
-                                            </div>
-                                            <div class="controls-more">
-                                                <ul>
-                                                    <li><a onclick="openNav('<?php echo addslashes($name); ?>', '<?php echo $easytofind; ?>', '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>', '<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>', '<?php echo addslashes($value->address); ?>', '<?php echo addslashes($value->city); ?>')">Details</a></li>
-                                                    <li><a href="#mapLabel" onclick="showOnMap('<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>')">Show On Map</a></li>
-                                                    <li><a href="#">Get Direction</a></li>
-                                                </ul>
-                                            </div>
-                                            <!--end controls-more-->
+                                            <!--end item-->
                                         </div>
-                                        <!--end additional-info-->
-                                        <script>
-                                        setMarker(parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>'), '<?php echo addslashes($name); ?>', 1);
-                                        places.push(new Place('<?php echo addslashes($name); ?>','<?php echo addslashes($value->address); ?>','<?php echo addslashes($value->city); ?>',parseFloat('<?php echo $value->lat; ?>'),parseFloat('<?php echo $value->lng; ?>')));
-                                        </script>
-                                    </div>
-                                    <!--end item-->
-                                </div>
-                                <?php endforeach; ?>
-                            </div></div>
+                                    <?php endforeach; ?>
+                                </div></div>
                             <!-- Cafe Ends -->
                             <div id="bar">
-                            <div class="row ">
+                                <div class="row ">
                                     <?php
                                     foreach ($bar as $value):
-                                    $id = $value->bar_survey_common_id;
-                                    $name = $value->name;
-                                    $easytodfind = 0;
-                                    $accesibility = 0;
-                                    $ambiance = 0;
-                                    $staff = 0;
-                                    $food = 0;
-                                    $noise = 0;
-                                    $avgRating = 0;
-                                    foreach ($barRating as $rating):
-                                    if ($rating->bar_survey_common_id == $id) {
-                                    if ($rating->grade_type_id == 1) {
-                                    $easytofind = $rating->rating;
-                                    } else if ($rating->grade_type_id == 2) {
-                                    $accesibility = $rating->rating;
-                                    } else if ($rating->grade_type_id == 3) {
-                                    $ambiance = $rating->rating;
-                                    } else if ($rating->grade_type_id == 4) {
-                                    $staff = $rating->rating;
-                                    } else if ($rating->grade_type_id == 5) {
-                                    $food = $rating->rating;
-                                    } else if ($rating->grade_type_id == 6) {
-                                    $noise = $rating->rating;
-                                    }
-                                    }
-                                    endforeach;
-                                    foreach ($barRatingAverage as $avg):
-                                    if ($avg->bar_survey_common_id == $id) {
-                                    $avgRating = $avg->average;
-                                    }
-                                    endforeach;
-                                    ?>
-                                    <div class="itemTab col-md-4 col-sm-4 col-xs-4">
-                                        <div class="item">
-                                            <a  onclick="openNav('<?php echo addslashes($name); ?>', '<?php echo $easytofind; ?>', '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>', '<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>', '<?php echo addslashes($value->address); ?>', '<?php echo addslashes($value->city); ?>')">
-                                                <div class="description">
-                                                <figure></figure>
-                                                <div class="label label-default">Cafe</div>
-                                                <h3><?php echo $name; ?></h3>
-                                                <h4><?php echo $value->address; ?></h4>
-                                                <?php echo $value->city; ?>
+                                        $id = $value->bar_survey_common_id;
+                                        $name = $value->name;
+                                        $easytodfind = 0;
+                                        $accesibility = 0;
+                                        $ambiance = 0;
+                                        $staff = 0;
+                                        $food = 0;
+                                        $noise = 0;
+                                        $avgRating = 0;
+                                        foreach ($barRating as $rating):
+                                            if ($rating->bar_survey_common_id == $id) {
+                                                if ($rating->grade_type_id == 1) {
+                                                    $easytofind = $rating->rating;
+                                                } else if ($rating->grade_type_id == 2) {
+                                                    $accesibility = $rating->rating;
+                                                } else if ($rating->grade_type_id == 3) {
+                                                    $ambiance = $rating->rating;
+                                                } else if ($rating->grade_type_id == 4) {
+                                                    $staff = $rating->rating;
+                                                } else if ($rating->grade_type_id == 5) {
+                                                    $food = $rating->rating;
+                                                } else if ($rating->grade_type_id == 6) {
+                                                    $noise = $rating->rating;
+                                                }
+                                            }
+                                        endforeach;
+                                        foreach ($barRatingAverage as $avg):
+                                            if ($avg->bar_survey_common_id == $id) {
+                                                $avgRating = $avg->average;
+                                            }
+                                        endforeach;
+                                        ?>
+                                        <div class="itemTab col-md-4 col-sm-4 col-xs-4">
+                                            <div class="item">
+                                                <a  onclick="openNav('<?php echo addslashes($name); ?>', '<?php echo $easytofind; ?>', '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>', '<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>', '<?php echo addslashes($value->address); ?>', '<?php echo addslashes($value->city); ?>')">
+                                                    <div class="description">
+                                                        <figure></figure>
+                                                        <div class="label label-default">Bar</div>
+                                                        <h3><?php echo $name; ?></h3>
+                                                        <h4><?php echo $value->address; ?></h4>
+                                                        <?php echo $value->city; ?>
+                                                    </div>
+                                                    <!--end description-->
+                                                    <div class="image bg-transfer">
+                                                        <img class="img-responsive" src="https://maps.googleapis.com/maps/api/streetview?size=640x340&location=<?php echo $value->lat; ?>,<?php echo $value->lng; ?>7&key=AIzaSyBaDWhE5AeN2ar9Nz1bqDvzNQWJcj-iqjU" alt="">
+                                                    </div>
+                                                    <!--end image-->
+                                                </a>
+                                                <div class="additional-info">
+                                                    <div class="rating-passive" data-rating="<?php echo $avgRating; ?>">
+                                                        <span class="stars"></span>
+                                                    </div>
+                                                    <div class="controls-more">
+                                                        <ul>
+                                                            <li><a onclick="openNav('<?php echo addslashes($name); ?>', '<?php echo $easytofind; ?>', '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>', '<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>', '<?php echo addslashes($value->address); ?>', '<?php echo addslashes($value->city); ?>')">Details</a></li>
+                                                            <li><a href="#mapLabel" onclick="showOnMap('<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>')">Show On Map</a></li>
+                                                            <li><a href="#">Get Direction</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <!--end controls-more-->
+                                                </div>
+                                                <!--end additional-info-->
+                                                <script>
+                                                    setMarker(parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>'), '<?php echo addslashes($name); ?>', 2);
+                                                    places.push(new Place('<?php echo addslashes($name); ?>', '<?php echo addslashes($value->address); ?>', '<?php echo addslashes($value->city); ?>', parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>')));
+                                                </script>
                                             </div>
-                                            <!--end description-->
-                                            <div class="image bg-transfer">
-                                                <img class="img-responsive" src="https://maps.googleapis.com/maps/api/streetview?size=640x340&location=<?php echo $value->lat; ?>,<?php echo $value->lng; ?>7&key=AIzaSyBaDWhE5AeN2ar9Nz1bqDvzNQWJcj-iqjU" alt="">
-                                            </div>
-                                            <!--end image-->
-                                        </a>
-                                        <div class="additional-info">
-                                            <div class="rating-passive" data-rating="<?php echo $avgRating; ?>">
-                                                <span class="stars"></span>
-                                            </div>
-                                            <div class="controls-more">
-                                                <ul>
-                                                    <li><a onclick="openNav('<?php echo addslashes($name); ?>', '<?php echo $easytofind; ?>', '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>', '<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>', '<?php echo addslashes($value->address); ?>', '<?php echo addslashes($value->city); ?>')">Details</a></li>
-                                                    <li><a href="#mapLabel" onclick="showOnMap('<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>')">Show On Map</a></li>
-                                                    <li><a href="#">Get Direction</a></li>
-                                                </ul>
-                                            </div>
-                                            <!--end controls-more-->
+                                            <!--end item-->
                                         </div>
-                                        <!--end additional-info-->
-                                        <script>
-                                        setMarker(parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>'), '<?php echo addslashes($name); ?>', 2);
-                                        places.push(new Place('<?php echo addslashes($name); ?>','<?php echo addslashes($value->address); ?>','<?php echo addslashes($value->city); ?>',parseFloat('<?php echo $value->lat; ?>'),parseFloat('<?php echo $value->lng; ?>')));
-                                        </script>
-                                    </div>
-                                    <!--end item-->
-                                </div>
-                                <?php endforeach; ?>
-                            </div></div>
+                                    <?php endforeach; ?>
+                                </div></div>
                             <!-- Bar Ends -->
-                            <div id="restaurant">Res</div>
+                            <div id="restaurant">
+                                <div class="row ">
+                                    <?php
+                                    foreach ($resturant as $value):
+                                        $id = $value->resturant_survey_common_id;
+                                        $name = $value->name;
+                                        $easytodfind = 0;
+                                        $accesibility = 0;
+                                        $ambiance = 0;
+                                        $staff = 0;
+                                        $food = 0;
+                                        $noise = 0;
+                                        $avgRating = 0;
+                                        foreach ($resturantRating as $rating):
+                                            if ($rating->resturant_survey_common_id == $id) {
+                                                if ($rating->grade_type_id == 1) {
+                                                    $easytofind = $rating->rating;
+                                                } else if ($rating->grade_type_id == 2) {
+                                                    $accesibility = $rating->rating;
+                                                } else if ($rating->grade_type_id == 3) {
+                                                    $ambiance = $rating->rating;
+                                                } else if ($rating->grade_type_id == 4) {
+                                                    $staff = $rating->rating;
+                                                } else if ($rating->grade_type_id == 5) {
+                                                    $food = $rating->rating;
+                                                } else if ($rating->grade_type_id == 6) {
+                                                    $noise = $rating->rating;
+                                                }
+                                            }
+                                        endforeach;
+                                        foreach ($resturantRatingAverage as $avg):
+                                            if ($avg->resturant_survey_common_id == $id) {
+                                                $avgRating = $avg->average;
+                                            }
+                                        endforeach;
+                                        ?>
+                                        <div class="itemTab col-md-4 col-sm-4 col-xs-4">
+                                            <div class="item">
+                                                <a  onclick="openNav('<?php echo addslashes($name); ?>', '<?php echo $easytofind; ?>', '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>', '<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>', '<?php echo addslashes($value->address); ?>', '<?php echo addslashes($value->city); ?>')">
+                                                    <div class="description">
+                                                        <figure></figure>
+                                                        <div class="label label-default">Resturant</div>
+                                                        <h3><?php echo $name; ?></h3>
+                                                        <h4><?php echo $value->address; ?></h4>
+                                                        <?php echo $value->city; ?>
+                                                    </div>
+                                                    <!--end description-->
+                                                    <div class="image bg-transfer">
+                                                        <img class="img-responsive" src="https://maps.googleapis.com/maps/api/streetview?size=640x340&location=<?php echo $value->lat; ?>,<?php echo $value->lng; ?>7&key=AIzaSyBaDWhE5AeN2ar9Nz1bqDvzNQWJcj-iqjU" alt="">
+                                                    </div>
+                                                    <!--end image-->
+                                                </a>
+                                                <div class="additional-info">
+                                                    <div class="rating-passive" data-rating="<?php echo $avgRating; ?>">
+                                                        <span class="stars"></span>
+                                                    </div>
+                                                    <div class="controls-more">
+                                                        <ul>
+                                                            <li><a onclick="openNav('<?php echo addslashes($name); ?>', '<?php echo $easytofind; ?>', '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>', '<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>', '<?php echo addslashes($value->address); ?>', '<?php echo addslashes($value->city); ?>')">Details</a></li>
+                                                            <li><a href="#mapLabel" onclick="showOnMap('<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>')">Show On Map</a></li>
+                                                            <li><a href="#">Get Direction</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <!--end controls-more-->
+                                                </div>
+                                                <!--end additional-info-->
+                                                <script>
+                                                    setMarker(parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>'), '<?php echo addslashes($name); ?>', 3);
+                                                    places.push(new Place('<?php echo addslashes($name); ?>', '<?php echo addslashes($value->address); ?>', '<?php echo addslashes($value->city); ?>', parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>')));
+                                                </script>
+                                            </div>
+                                            <!--end item-->
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+
+                            </div>
                             <!-- Restaurant Ends -->
-                            <div id="pollsite">Poll</div>
+                            <div id="pollsite">
+                                <div class="row ">
+                                    <?php
+                                    foreach ($poll_site as $value):
+                                        $id = $value->poll_site_survey_common_id;
+                                        $name = $value->name;
+                                        $easytodfind = 0;
+                                        $accesibility = 0;
+                                        $ambiance = 0;
+                                        $staff = 0;
+                                        $food = 0;
+                                        $noise = 0;
+                                        $avgRating = 0;
+                                        foreach ($poll_siteRating as $rating):
+                                            if ($rating->poll_site_survey_common_id == $id) {
+                                                if ($rating->grade_type_id == 1) {
+                                                    $easytofind = $rating->rating;
+                                                } else if ($rating->grade_type_id == 2) {
+                                                    $accesibility = $rating->rating;
+                                                } else if ($rating->grade_type_id == 3) {
+                                                    $ambiance = $rating->rating;
+                                                } else if ($rating->grade_type_id == 4) {
+                                                    $staff = $rating->rating;
+                                                } else if ($rating->grade_type_id == 5) {
+                                                    $food = $rating->rating;
+                                                } else if ($rating->grade_type_id == 6) {
+                                                    $noise = $rating->rating;
+                                                }
+                                            }
+                                        endforeach;
+                                        foreach ($poll_siteRatingAverage as $avg):
+                                            if ($avg->poll_site_survey_common_id == $id) {
+                                                $avgRating = $avg->average;
+                                            }
+                                        endforeach;
+                                        ?>
+                                        <div class="itemTab col-md-4 col-sm-4 col-xs-4">
+                                            <div class="item">
+                                                <a  onclick="openNav('<?php echo addslashes($name); ?>', '<?php echo $easytofind; ?>', '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>', '<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>', '<?php echo addslashes($value->address); ?>', '<?php echo addslashes($value->city); ?>')">
+                                                    <div class="description">
+                                                        <figure></figure>
+                                                        <div class="label label-default">Poll Site</div>
+                                                        <h3><?php echo $name; ?></h3>
+                                                        <h4><?php echo $value->address; ?></h4>
+                                                        <?php echo $value->city; ?>
+                                                    </div>
+                                                    <!--end description-->
+                                                    <div class="image bg-transfer">
+                                                        <img class="img-responsive" src="https://maps.googleapis.com/maps/api/streetview?size=640x340&location=<?php echo $value->lat; ?>,<?php echo $value->lng; ?>7&key=AIzaSyBaDWhE5AeN2ar9Nz1bqDvzNQWJcj-iqjU" alt="">
+                                                    </div>
+                                                    <!--end image-->
+                                                </a>
+                                                <div class="additional-info">
+                                                    <div class="rating-passive" data-rating="<?php echo $avgRating; ?>">
+                                                        <span class="stars"></span>
+                                                    </div>
+                                                    <div class="controls-more">
+                                                        <ul>
+                                                            <li><a onclick="openNav('<?php echo addslashes($name); ?>', '<?php echo $easytofind; ?>', '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>', '<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>', '<?php echo addslashes($value->address); ?>', '<?php echo addslashes($value->city); ?>')">Details</a></li>
+                                                            <li><a href="#mapLabel" onclick="showOnMap('<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>')">Show On Map</a></li>
+                                                            <li><a href="#">Get Direction</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <!--end controls-more-->
+                                                </div>
+                                                <!--end additional-info-->
+                                                <script>
+                                                    setMarker(parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>'), '<?php echo addslashes($name); ?>', 4);
+                                                    places.push(new Place('<?php echo addslashes($name); ?>', '<?php echo addslashes($value->address); ?>', '<?php echo addslashes($value->city); ?>', parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>')));
+                                                </script>
+                                            </div>
+                                            <!--end item-->
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                            </div>
                             <!-- Poll Site Ends -->
                         </div>
                         <!--end container-->
@@ -412,46 +576,46 @@
             </div>
         </div>
         <script>
-        function openNav(name, easytofind, accesibility, ambiance, staff, food, noise, lat, lng, addrs, city) {
-        closeNav();
-        document.getElementById("sidebar-wrapper").style.width = "30vw";
-        // document.getElementById("main").style.overflow-y: hidden;
-        // document.getElementById("main").style.overflow-x: hidden;
-        //document.getElementById("main").style.overflow: hidden;
-        // document.getElementById("main").style.pointer-events: none;
-        // document.getElementById("main").style.marginLeft = "30vw";
-        // document.getElementById("main").style.width = "70vw";
-        document.getElementById("sidebar-name").innerHTML = name;
-        document.getElementById("sidebar-addrs").innerHTML = addrs;
-        document.getElementById("sidebar-city").innerHTML = city;
-        // $('.itemTab').removeClass("col-md-4 col-xs-4 col-sm-4").addClass("col-md-3 col-xs-3 col-sm-3");
-        // $('.container').removeClass("col-md-12 col-xs-12 col-sm-12").addClass("col-md-11 col-xs-11 col-sm-11");
-        var img = "https://maps.googleapis.com/maps/api/streetview?size=640x450&location=" + lat + "," + lng + "7&key=AIzaSyBaDWhE5AeN2ar9Nz1bqDvzNQWJcj-iqjU"
-        $("#sidebar-image").attr("src", img);
-        $('#easytofind').stars(easytofind);
-        $('#accesibility').stars(accesibility);
-        $('#ambiance').stars(ambiance);
-        $('#staff').stars(staff);
-        $('#food').stars(food);
-        $('#noise').stars(noise);
-        }
-        function closeNav() {
-        document.getElementById("sidebar-wrapper").style.width = "0";
-        // document.getElementById("main").style.marginLeft = "0";
-        // document.getElementById("main").style.width = "100vw";
-        // $('.itemTab').removeClass("col-md-3 col-xs-3 col-sm-3").addClass("col-md-4 col-xs-4 col-sm-4");
-        // $('.container').removeClass("col-md-11 col-xs-11 col-sm-11").addClass("col-md-12 col-xs-12 col-sm-12");
-        }
-        $.fn.stars = function (value) {
-        return $(this).each(function () {
-        var rating = parseInt(value);
-        var numStars = $(this).data("numStars");
-        var fullStar = new Array(Math.floor(rating + 1)).join('<i class="fa fa-star icon-custom"></i>');
-        var halfStar = ((rating % 1) !== 0) ? '<i class="fa fa-star-half-empty icon-custom"></i>' : '';
-        var noStar = new Array(Math.floor(numStars + 1 - rating)).join('<i class="fa fa-star-o icon-custom"></i>');
-        $(this).html(fullStar + halfStar + noStar);
-        });
-        }
+            function openNav(name, easytofind, accesibility, ambiance, staff, food, noise, lat, lng, addrs, city) {
+                closeNav();
+                document.getElementById("sidebar-wrapper").style.width = "30vw";
+                // document.getElementById("main").style.overflow-y: hidden;
+                // document.getElementById("main").style.overflow-x: hidden;
+                //document.getElementById("main").style.overflow: hidden;
+                // document.getElementById("main").style.pointer-events: none;
+                // document.getElementById("main").style.marginLeft = "30vw";
+                // document.getElementById("main").style.width = "70vw";
+                document.getElementById("sidebar-name").innerHTML = name;
+                document.getElementById("sidebar-addrs").innerHTML = addrs;
+                document.getElementById("sidebar-city").innerHTML = city;
+                // $('.itemTab').removeClass("col-md-4 col-xs-4 col-sm-4").addClass("col-md-3 col-xs-3 col-sm-3");
+                // $('.container').removeClass("col-md-12 col-xs-12 col-sm-12").addClass("col-md-11 col-xs-11 col-sm-11");
+                var img = "https://maps.googleapis.com/maps/api/streetview?size=640x450&location=" + lat + "," + lng + "7&key=AIzaSyBaDWhE5AeN2ar9Nz1bqDvzNQWJcj-iqjU"
+                $("#sidebar-image").attr("src", img);
+                $('#easytofind').stars(easytofind);
+                $('#accesibility').stars(accesibility);
+                $('#ambiance').stars(ambiance);
+                $('#staff').stars(staff);
+                $('#food').stars(food);
+                $('#noise').stars(noise);
+            }
+            function closeNav() {
+                document.getElementById("sidebar-wrapper").style.width = "0";
+                // document.getElementById("main").style.marginLeft = "0";
+                // document.getElementById("main").style.width = "100vw";
+                // $('.itemTab').removeClass("col-md-3 col-xs-3 col-sm-3").addClass("col-md-4 col-xs-4 col-sm-4");
+                // $('.container').removeClass("col-md-11 col-xs-11 col-sm-11").addClass("col-md-12 col-xs-12 col-sm-12");
+            }
+            $.fn.stars = function (value) {
+                return $(this).each(function () {
+                    var rating = parseInt(value);
+                    var numStars = $(this).data("numStars");
+                    var fullStar = new Array(Math.floor(rating + 1)).join('<i class="fa fa-star icon-custom"></i>');
+                    var halfStar = ((rating % 1) !== 0) ? '<i class="fa fa-star-half-empty icon-custom"></i>' : '';
+                    var noStar = new Array(Math.floor(numStars + 1 - rating)).join('<i class="fa fa-star-o icon-custom"></i>');
+                    $(this).html(fullStar + halfStar + noStar);
+                });
+            }
         </script>
     </div>
 </body>
