@@ -44,8 +44,8 @@
                         <div class="primary-nav has-mega-menu">
                             <ul class="navigation">
                                 <li><a href="http://www.gradeapp.org">Home</a></li>
-                                <li><a href="http://www.gradeapp.org/#locations">Locations</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="#locations">Locations</a></li>
+                                <li><a href="#contact">Contact</a></li>
                             </ul>
                         </div>
                         <a href="http://www.gradeapp.org/web/" class="btn btn-primary btn-small btn-rounded icon shadow add-listing" ><i class="fa fa-plus"></i><span>GRADE A LOCATION</span></a>
@@ -53,23 +53,23 @@
                 </nav>
             </header>
             <div id="sidebar-wrapper" style="height:100%;">
-                <ul id="sidebar-nav" style="list-style:none">
-                    <li class="sidebar-brand"><img id="sidebar-image" class="img-responsive" src="" alt="COULD NOT LOAD IMAGE"></li>
-                    <li class="sidebar-brand"><b id="sidebar-name"></b></li>
-                    <li class="sidebar-brand"><b id="sidebar-addrs"></b></li>
-                    <li class="sidebar-brand"><b id="sidebar-city"></b></li>
-                    <li class="sidebar-brand">Easy to Find    <a onclick="closeNav()" class="close" aria-label="Close"> <span aria-hidden="true">&times;</span></a></li>
-                    <li class="sidebar-brand"><span id="easytofind" class="stars" data-rating="" data-num-stars="5" ></span></li>
-                    <li class="sidebar-brand">Accesibility</li>
-                    <li class="sidebar-brand"><span id="accesibility" class="stars" data-rating="" data-num-stars="5" ></span></li>
-                    <li class="sidebar-brand">Ambiance</li>
-                    <li class="sidebar-brand"><span id="ambiance" class="stars" data-rating="" data-num-stars="5" ></span></li>
-                    <li class="sidebar-brand">Friendly Staff</li>
-                    <li class="sidebar-brand"><span id="staff" class="stars" data-rating="" data-num-stars="5" ></span></li>
-                    <li class="sidebar-brand">Food</li>
-                    <li class="sidebar-brand"><span id="food" class="stars" data-rating="" data-num-stars="5" ></span></li>
-                    <li class="sidebar-brand">Noise Level</li>
-                    <li class="sidebar-brand"><span id="noise" class="stars" data-rating="" data-num-stars="5" ></span></li>
+                <ul id="sidebar-nav" style="list-style:none" class="list-group">
+                    <li class="sidebar-brand list-group-item"><img id="sidebar-image" class="img-responsive" src="" alt="COULD NOT LOAD IMAGE"></li>
+                    <li class="sidebar-brand "><b id="sidebar-name"></b></li>
+                    <li class="sidebar-brand "><b id="sidebar-addrs"></b></li>
+                    <li class="sidebar-brand "><b id="sidebar-city"></b></li>
+                    <li class="sidebar-brand "><b>Easy to Find</b>    <a onclick="closeNav()" class="close" aria-label="Close cross"> <span class="cross" aria-hidden="true"><b>&times;</b></span></a></li>
+                    <li class="sidebar-brand "><span id="easytofind" class="stars" data-rating="" data-num-stars="5" ></span></li>
+                    <li class="sidebar-brand "><b>Accesibility</b></li>
+                    <li class="sidebar-brand "><span id="accesibility" class="stars" data-rating="" data-num-stars="5" ></span></li>
+                    <li class="sidebar-brand "><b>Ambiance</b></li>
+                    <li class="sidebar-brand "><span id="ambiance" class="stars" data-rating="" data-num-stars="5" ></span></li>
+                    <li class="sidebar-brand "><b>Friendly Staff</b></li>
+                    <li class="sidebar-brand "><span id="staff" class="stars" data-rating="" data-num-stars="5" ></span></li>
+                    <li class="sidebar-brand "><b>Food</b></li>
+                    <li class="sidebar-brand "><span id="food" class="stars" data-rating="" data-num-stars="5" ></span></li>
+                    <li class="sidebar-brand "><b>Noise Level</b></li>
+                    <li class="sidebar-brand "><span id="noise" class="stars" data-rating="" data-num-stars="5" ></span></li>
                 </ul>
             </div>
             <div id="page-content container-fluid whole">
@@ -82,7 +82,7 @@
                     </div>
                     <!-- map -->
                     <div class="hero-section full-screen has-map " id="mapLabel">
-                    <h2 id="locations" style="margin-top:-60px; text-align:center;">Locations</h2>
+                        <h2 id="locations" style="margin-top:-60px; text-align:center;">Locations</h2>
                         <div class="map-wrapper">
                             <div class="geo-location">
                                 <i class="fa fa-map-marker"></i>
@@ -127,7 +127,7 @@
                             function setMarker(lat, lng, name, count) {
                                 var image = '';
                                 if (count == 0) {
-                                    image = "<?php echo base_url(); ?>img/grade-icon-36x36.png";
+                                    image = "<?php echo base_url(); ?>img/grade-icon-18x18.png";
                                 } else if (count == 1) {
                                     image = "<?php echo base_url(); ?>img/coffee.resized.png";
                                 } else if (count == 2) {
@@ -209,10 +209,12 @@
                                                 $('#pollsite').hide();
                                                 $('#cafe').fadeIn(500);"> <i class="fa fa-coffee" aria-hidden="true"></i> &nbsp;Cafe</button>
                                         <button class="btn btn-default" onclick="$('#restaurant').hide();
-                                                $('#bar').fadeIn(500);$('#pollsite').hide();
+                                                $('#bar').fadeIn(500);
+                                                $('#pollsite').hide();
                                                 $('#cafe').hide();"><i class="fa fa-glass" aria-hidden="true"></i> &nbsp; Bar</button>
                                         <button class="btn btn-default" onclick="$('#restaurant').fadeIn(500);$('#bar').hide();
-                                                $('#pollsite').hide();$('#cafe').hide();"><i class="fa fa-cutlery" aria-hidden="true"></i>&nbsp; Restaurant</button>
+                                                $('#pollsite').hide();
+                                                $('#cafe').hide();"><i class="fa fa-cutlery" aria-hidden="true"></i>&nbsp; Restaurant</button>
                                         <button class="btn btn-default" onclick="$('#restaurant').hide();
                                                 $('#bar').hide();
                                                 $('#pollsite').fadeIn(500);
@@ -533,6 +535,61 @@
                         <!--end container-->
                     </section>
                     <!--end block-->
+                    <h2 id="contact" style=" text-align:center;">Contact</h2>
+                    <section class="block">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="con">
+                                    <h3 class="info">Contact Information</h3>
+                                    <div class="box">
+                                        <address>
+                                            <strong>Location</strong>
+                                            <figure>841 Broadway, Suite 301, New York</figure>
+                                            <br>
+                                            <strong>Phone Number</strong>
+                                            <figure>212-674-2300</figure>
+                                            <br><strong>Email</strong>
+                                            <figure>info@cidny.org</figure>
+                                        </address>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-9 col-sm-9">
+                                    <h3 >Form</h3>
+                                    <form class="form" >
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="name">Name</label>
+                                                    <input class="form-control" name="name" id="name" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="email">Email</label>
+                                                    <input class="form-control" name="email" id="email" type="email">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="subject">Subject</label>
+                                                    <input class="form-control" name="subject" id="subject" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="message">Message</label>
+                                            <textarea class="form-control" id="message" rows="4" name="message"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary icon shadow">Send Message<i class="fa fa-caret-right"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                     <!--end page-content-->
                     <footer id="page-footer">
                         <div class="footer-wrapper">
@@ -612,9 +669,9 @@
                 return $(this).each(function () {
                     var rating = parseInt(value);
                     var numStars = $(this).data("numStars");
-                    var fullStar = new Array(Math.floor(rating + 1)).join('<i class="fa fa-star icon-custom"></i>');
-                    var halfStar = ((rating % 1) !== 0) ? '<i class="fa fa-star-half-empty icon-custom"></i>' : '';
-                    var noStar = new Array(Math.floor(numStars + 1 - rating)).join('<i class="fa fa-star-o icon-custom"></i>');
+                    var fullStar = new Array(Math.floor(rating + 1)).join('<i class="fa fa-star icon-custom fa-2x"></i>');
+                    var halfStar = ((rating % 1) !== 0) ? '<i class="fa fa-star-half-empty icon-custom fa-2x"></i>' : '';
+                    var noStar = new Array(Math.floor(numStars + 1 - rating)).join('<i class="fa fa-star-o icon-custom fa-2x"></i>');
                     $(this).html(fullStar + halfStar + noStar);
                 });
             }
