@@ -140,8 +140,19 @@
                                 var marker = new google.maps.Marker({
                                     position: new google.maps.LatLng(lat, lng),
                                     map: map,
-                                    label: name,
-                                    icon: image,
+                                    // label: name,
+                                    // icon: image,
+                                    label: {
+                                        color: "#4d4d70",
+                                        text: name,
+                                    },
+                                    icon: {
+                                        labelOrigin: new google.maps.Point(11, 30),
+                                        url: image,
+                                        size: new google.maps.Size(22, 30),
+                                        origin: new google.maps.Point(0, 0),
+                                        anchor: new google.maps.Point(11, 30),
+                                    },
                                 });
                             }
                             function showOnMap(lat, lng) {
@@ -151,35 +162,6 @@
                                 map.panTo(position);
                             }
                             setMarker(40.732714, -73.991393, "CIDNY", 0);
-                        </script>
-                        <script>
-                            var availableTags = [
-                                "ActionScript",
-                                "AppleScript",
-                                "Asp",
-                                "BASIC",
-                                "C",
-                                "C++",
-                                "Clojure",
-                                "COBOL",
-                                "ColdFusion",
-                                "Erlang",
-                                "Fortran",
-                                "Groovy",
-                                "Haskell",
-                                "Java",
-                                "JavaScript",
-                                "Lisp",
-                                "Perl",
-                                "PHP",
-                                "Python",
-                                "Ruby",
-                                "Scala",
-                                "Scheme"
-                            ];
-                            $("#placeinput").autocomplete({
-                                source: availableTags
-                            });
                         </script>
                         <!--end map-wrapper-->
                         <!--end results-wrapper-->
@@ -224,7 +206,7 @@
                                 </div>
                                 <!--end section-title-->
                             </div>
-                            <hr style="margin-top:-50px;height:px;border:1px;color:#4d4d70;background-color:#4d4d70;">
+                            <hr style="margin-top:-50px;height:1px;border:1px;color:#4d4d70;background-color:#4d4d70;">
                             <div id="cafe">
                                 <div class="row ">
                                     <?php
@@ -532,58 +514,58 @@
                             </div>
                             <!-- Poll Site Ends -->
                             <div class="container">
-                            <h2 id="contact" style=" text-align:center; margin-top:30px;">Contact</h2>
-                            <div class="row">
-                                <div class="col-md-3 col-sm-3">
-                                    <div class="con">
-                                        <h3 class="info">Contact Information</h3>
-                                        <div class="box">
-                                            <address>
-                                                <strong>Location</strong>
-                                                <figure>841 Broadway, Suite 301, New York</figure>
-                                                <br>
-                                                <strong>Phone Number</strong>
-                                                <figure>212-674-2300</figure>
-                                                <br><strong>Email</strong>
-                                                <figure>info@cidny.org</figure>
-                                            </address>
+                                <h2 id="contact" style=" text-align:center; margin-top:30px;">Contact</h2>
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-3">
+                                        <div class="con">
+                                            <h3 class="info">Contact Information</h3>
+                                            <div class="box">
+                                                <address>
+                                                    <strong>Location</strong>
+                                                    <figure>841 Broadway, Suite 301, New York</figure>
+                                                    <br>
+                                                    <strong>Phone Number</strong>
+                                                    <figure>212-674-2300</figure>
+                                                    <br><strong>Email</strong>
+                                                    <figure>info@cidny.org</figure>
+                                                </address>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-9 col-sm-9">
-                                    <h3 >Form</h3>
-                                    <form class="form form-email inputs-underline" >
-                                        <div class="row">
-                                            <div class="col-md-4 col-sm-4">
-                                                <div class="form-group">
-                                                    <label for="name"><strong>Name</strong></label>
-                                                    <input class="form-control" name="name" id="name" type="text">
+                                    <div class="col-md-9 col-sm-9">
+                                        <h3 >Form</h3>
+                                        <form class="form form-email inputs-underline" >
+                                            <div class="row">
+                                                <div class="col-md-4 col-sm-4">
+                                                    <div class="form-group">
+                                                        <label for="name"><strong>Name</strong></label>
+                                                        <input class="form-control" name="name" id="name" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-sm-4">
+                                                    <div class="form-group">
+                                                        <label for="email"><strong>Email</strong></label>
+                                                        <input class="form-control" name="email" id="email" type="email">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-sm-4">
+                                                    <div class="form-group">
+                                                        <label for="subject"><strong>Subject</strong></label>
+                                                        <input class="form-control" name="subject" id="subject" type="text">
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4 col-sm-4">
-                                                <div class="form-group">
-                                                    <label for="email"><strong>Email</strong></label>
-                                                    <input class="form-control" name="email" id="email" type="email">
-                                                </div>
+                                            <div class="form-group">
+                                                <label for="message"><strong>Message</strong></label>
+                                                <textarea class="form-control" id="message" rows="4" name="message"></textarea>
                                             </div>
-                                            <div class="col-md-4 col-sm-4">
-                                                <div class="form-group">
-                                                    <label for="subject"><strong>Subject</strong></label>
-                                                    <input class="form-control" name="subject" id="subject" type="text">
-                                                </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary icon shadow">Send Message<i class="fa fa-caret-right"></i></button>
                                             </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="message"><strong>Message</strong></label>
-                                            <textarea class="form-control" id="message" rows="4" name="message"></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-primary icon shadow">Send Message<i class="fa fa-caret-right"></i></button>
-                                        </div>
-                                    </form>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </div>
                         <!--end container-->
                         <div>
