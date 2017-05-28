@@ -601,12 +601,14 @@
                                 <div class="container">
                                     <div class="vertical-aligned-elements">
                                         <div class="element width-50">
-                                            <p data-toggle="modal" data-target="#myModal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam at neque sit amet vestibulum. <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</p>
+                                            <p >Connect with and and try our apps</p>
                                         </div>
                                         <div class="element width-50 text-align-right">
-                                            <a href="#" class="circle-icon"><i class="social_twitter"></i></a>
-                                            <a href="#" class="circle-icon"><i class="social_facebook"></i></a>
-                                            <a href="#" class="circle-icon"><i class="social_youtube"></i></a>
+                                            <a href="https://twitter.com/cid_ny" class="circle-icon"><i class="social_twitter"></i></a>
+                                            <a href="https://www.facebook.com/CIDNYInc" class="circle-icon"><i class="social_facebook"></i></a>
+                                            <a href="https://play.google.com/store/apps/details?id=com.iquantile.com" class="circle-icon"><i class="fa fa-android"></i></a>
+                                            <a href="https://www.microsoft.com/en-us/store/p/grade/9nblggh1nm99" class="circle-icon"><i class="fa fa-windows"></i></a>
+                                            <a href="https://itunes.apple.com/us/app/grade-app/id1006795942?ls=1&amp;mt=8" class="circle-icon"><i class="fa fa-apple"></i></a>
                                         </div>
                                     </div>
                                     <div class="background-wrapper">
