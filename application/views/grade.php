@@ -44,7 +44,7 @@
                         <div class="primary-nav has-mega-menu">
                             <ul class="navigation">
                                 <li><a href="http://www.gradeapp.org">Home</a></li>
-                                <li><a href="http://www.gradeapp.org">Locations</a></li>
+                                <li><a href="http://www.gradeapp.org/#locations">Locations</a></li>
                                 <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </div>
@@ -82,6 +82,7 @@
                     </div>
                     <!-- map -->
                     <div class="hero-section full-screen has-map " id="mapLabel">
+                    <h2 id="locations" style="margin-top:-60px; text-align:center;">Locations</h2>
                         <div class="map-wrapper">
                             <div class="geo-location">
                                 <i class="fa fa-map-marker"></i>
@@ -220,6 +221,7 @@
                                 </div>
                                 <!--end section-title-->
                             </div>
+                            <hr style="margin-top:-50px;">
                             <div id="cafe">
                                 <div class="row ">
                                     <?php
