@@ -224,7 +224,7 @@
                                 </div>
                                 <!--end section-title-->
                             </div>
-                            <hr style="margin-top:-50px;">
+                            <hr style="margin-top:-50px;height:1px;border:1px;color:#4d4d70;background-color:#4d4d70;">
                             <div id="cafe">
                                 <div class="row ">
                                     <?php
