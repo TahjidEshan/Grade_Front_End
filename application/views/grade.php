@@ -156,10 +156,8 @@
                                 });
                             }
                             function showOnMap(lat, lng) {
+                                map.setZoom(18);
                                 map.panTo(new google.maps.LatLng(lat, lng));
-                            }
-                            function showOnMap(position) {
-                                map.panTo(position);
                             }
                             setMarker(40.732714, -73.991393, "CIDNY", 0);
                         </script>
