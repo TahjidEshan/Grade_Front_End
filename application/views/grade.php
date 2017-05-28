@@ -108,7 +108,7 @@
                             var _latitude = 40.732714;
                             var _longitude = -73.991393;
                             var element = "map-homepage";
-                            var mapDefaultZoom = 12;
+                            var mapDefaultZoom = 16;
                             if (document.getElementById(element) != null) {
                                 if (!mapDefaultZoom) {
                                     mapDefaultZoom = 14;
@@ -140,7 +140,7 @@
                                 var marker = new google.maps.Marker({
                                     position: new google.maps.LatLng(lat, lng),
                                     map: map,
-                                    //label: name,
+                                    label: name,
                                     icon: image,
                                 });
                             }
@@ -212,7 +212,8 @@
                                                 $('#bar').fadeIn(500);
                                                 $('#pollsite').hide();
                                                 $('#cafe').hide();"><i class="fa fa-glass" aria-hidden="true"></i> &nbsp; Bar</button>
-                                        <button class="btn btn-default" onclick="$('#restaurant').fadeIn(500);$('#bar').hide();
+                                        <button class="btn btn-default" onclick="$('#restaurant').fadeIn(500);
+                                                $('#bar').hide();
                                                 $('#pollsite').hide();
                                                 $('#cafe').hide();"><i class="fa fa-cutlery" aria-hidden="true"></i>&nbsp; Restaurant</button>
                                         <button class="btn btn-default" onclick="$('#restaurant').hide();
@@ -451,7 +452,6 @@
                                         </div>
                                     <?php endforeach; ?>
                                 </div>
-
                             </div>
                             <!-- Restaurant Ends -->
                             <div id="pollsite">
@@ -531,33 +531,28 @@
                                 </div>
                             </div>
                             <!-- Poll Site Ends -->
-                        </div>
-                        <!--end container-->
-                    </section>
-                    <!--end block-->
-                    <h2 id="contact" style=" text-align:center;">Contact</h2>
-                    <section class="block">
-                        <div class="container">
+                            <div class="container">
+                            <h2 id="contact" style=" text-align:center; margin-top:30px;">Contact</h2>
                             <div class="row">
                                 <div class="col-md-3 col-sm-3">
                                     <div class="con">
-                                    <h3 class="info">Contact Information</h3>
-                                    <div class="box">
-                                        <address>
-                                            <strong>Location</strong>
-                                            <figure>841 Broadway, Suite 301, New York</figure>
-                                            <br>
-                                            <strong>Phone Number</strong>
-                                            <figure>212-674-2300</figure>
-                                            <br><strong>Email</strong>
-                                            <figure>info@cidny.org</figure>
-                                        </address>
-                                    </div>
+                                        <h3 class="info">Contact Information</h3>
+                                        <div class="box">
+                                            <address>
+                                                <strong>Location</strong>
+                                                <figure>841 Broadway, Suite 301, New York</figure>
+                                                <br>
+                                                <strong>Phone Number</strong>
+                                                <figure>212-674-2300</figure>
+                                                <br><strong>Email</strong>
+                                                <figure>info@cidny.org</figure>
+                                            </address>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-9 col-sm-9">
                                     <h3 >Form</h3>
-                                    <form class="form" >
+                                    <form class="form form-email inputs-underline" >
                                         <div class="row">
                                             <div class="col-md-4 col-sm-4">
                                                 <div class="form-group">
@@ -589,7 +584,16 @@
                                 </div>
                             </div>
                         </div>
+                        </div>
+                        <!--end container-->
+                        <div>
+
+                        </div>
                     </section>
+                    <div>
+
+                    </div>
+                    <!--end block-->
                     <!--end page-content-->
                     <footer id="page-footer">
                         <div class="footer-wrapper">
@@ -616,12 +620,11 @@
                             <div class="footer-navigation" style="width:99vw;">
                                 <div class="container">
                                     <div class="vertical-aligned-elements">
-                                        <div class="element width-50" >(C) 2016 Your Company, All right reserved</div>
+                                        <div class="element width-50" >(C) 2017 CIDNY, All right reserved</div>
                                         <div class="element width-50 text-align-right">
-                                            <a href="index.php">Home</a>
-                                            <a href="listing-grid-right-sidebar.html">Listings</a>
-                                            <a href="submit.html">Submit Item</a>
-                                            <a href="contact.html">Contact</a>
+                                            <a href="http://www.gradeapp.org">Home</a>
+                                            <a href="#locations">Locations</a>
+                                            <a href="#contact">Contact</a>
                                         </div>
                                     </div>
                                 </div>
