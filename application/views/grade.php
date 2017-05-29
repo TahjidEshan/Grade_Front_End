@@ -357,7 +357,7 @@
                                                         <ul>
                                                             <li><a onclick="openNav('<?php echo addslashes($name); ?>', '<?php echo $easytofind; ?>', '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>', '<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>', '<?php echo addslashes($value->address); ?>', '<?php echo addslashes($value->city); ?>')">Details</a></li>
                                                             <li><a href="#mapLabel" onclick="showOnMap('<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>')">Show On Map</a></li>
-                                                            <li><a href="#">Get Direction</a></li>
+                                                            <li><a href="#mapLabel" onclick="calculateAndDisplayRoute('<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>')">Get Direction</a></li>
                                                         </ul>
                                                     </div>
                                                     <!--end controls-more-->
@@ -433,7 +433,7 @@
                                                         <ul>
                                                             <li><a onclick="openNav('<?php echo addslashes($name); ?>', '<?php echo $easytofind; ?>', '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>', '<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>', '<?php echo addslashes($value->address); ?>', '<?php echo addslashes($value->city); ?>')">Details</a></li>
                                                             <li><a href="#mapLabel" onclick="showOnMap('<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>')">Show On Map</a></li>
-                                                            <li><a href="#">Get Direction</a></li>
+                                                            <li><a href="#mapLabel" onclick="calculateAndDisplayRoute('<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>')">Get Direction</a></li>
                                                         </ul>
                                                     </div>
                                                     <!--end controls-more-->
@@ -510,7 +510,7 @@
                                                         <ul>
                                                             <li><a onclick="openNav('<?php echo addslashes($name); ?>', '<?php echo $easytofind; ?>', '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>', '<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>', '<?php echo addslashes($value->address); ?>', '<?php echo addslashes($value->city); ?>')">Details</a></li>
                                                             <li><a href="#mapLabel" onclick="showOnMap('<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>')">Show On Map</a></li>
-                                                            <li><a href="#">Get Direction</a></li>
+                                                            <li><a href="#mapLabel" onclick="calculateAndDisplayRoute('<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>')">Get Direction</a></li>
                                                         </ul>
                                                     </div>
                                                     <!--end controls-more-->
