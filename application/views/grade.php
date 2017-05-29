@@ -96,6 +96,8 @@
                                 $("#pollsite").hide();
                             });
                             var map;
+                            var directionsService = new google.maps.DirectionsService;
+                            var directionsDisplay = new google.maps.DirectionsRenderer;
                             var places = [];
                             function Place(name, addrs, city, lat, lng) {
                                 this.name = name;
@@ -104,7 +106,6 @@
                                 this.lat = lat;
                                 this.lng = lng;
                             }
-                            var optimizedDatabaseLoading = 0;
                             var _latitude = 40.732714;
                             var _longitude = -73.991393;
                             var element = "map-homepage";
@@ -124,6 +125,7 @@
                                     styles: [{"featureType": "administrative", "elementType": "labels.text.fill", "stylers": [{"color": "#c6c6c6"}]}, {"featureType": "landscape", "elementType": "all", "stylers": [{"color": "#f2f2f2"}]}, {"featureType": "poi", "elementType": "all", "stylers": [{"visibility": "off"}]}, {"featureType": "road", "elementType": "all", "stylers": [{"saturation": -100}, {"lightness": 45}]}, {"featureType": "road.highway", "elementType": "all", "stylers": [{"visibility": "simplified"}]}, {"featureType": "road.highway", "elementType": "geometry.fill", "stylers": [{"color": "#ffffff"}]}, {"featureType": "road.arterial", "elementType": "labels.icon", "stylers": [{"visibility": "off"}]}, {"featureType": "transit", "elementType": "all", "stylers": [{"visibility": "off"}]}, {"featureType": "water", "elementType": "all", "stylers": [{"color": "#dde6e8"}, {"visibility": "on"}]}]
                                 });
                             }
+                            directionsDisplay.setMap(map);
                             function setMarker(lat, lng, name, count) {
                                 var image = '';
                                 if (count == 0) {
@@ -159,6 +161,19 @@
                                 map.setZoom(18);
                                 map.panTo(new google.maps.LatLng(lat, lng));
                             }
+                             function calculateAndDisplayRoute(lat,lng) {
+                                directionsService.route({
+                                  origin: new google.maps.LatLng(40.732714, -73.991393),
+                                  destination: new google.maps.LatLng(lat, lng),
+                                  travelMode: 'DRIVING'
+                                }, function(response, status) {
+                                  if (status === 'OK') {
+                                    directionsDisplay.setDirections(response);
+                                  } else {
+                                    window.alert('Directions request failed due to ' + status);
+                                  }
+                                });
+                              }
                             setMarker(40.732714, -73.991393, "CIDNY", 0);
                             places.push(new Place("CIDNY", "841 Broadway #301, New York, NY 10003", "New York", 40.732714,  -73.991393));
                         </script>
@@ -266,7 +281,7 @@
                                                         <ul>
                                                             <li><a onclick="openNav('<?php echo addslashes($name); ?>', '<?php echo $easytofind; ?>', '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>', '<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>', '<?php echo addslashes($value->address); ?>', '<?php echo addslashes($value->city); ?>')">Details</a></li>
                                                             <li><a href="#mapLabel" onclick="showOnMap('<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>')">Show On Map</a></li>
-                                                            <li><a href="#">Get Direction</a></li>
+                                                            <li><a href="#mapLabel" onclick="calculateAndDisplayRoute('<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>')">Get Direction</a></li>
                                                         </ul>
                                                     </div>
                                                     <!--end controls-more-->
