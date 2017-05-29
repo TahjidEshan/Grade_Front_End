@@ -146,7 +146,7 @@
                                     // icon: image,
                                     label: {
                                         color: "#4d4d70",
-                                        text: name,
+                                        // text: name,
                                     },
                                     icon: {
                                         labelOrigin: new google.maps.Point(11, 30),
