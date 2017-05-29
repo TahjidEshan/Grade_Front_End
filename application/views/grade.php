@@ -144,10 +144,10 @@
                                     map: map,
                                     // label: name,
                                     // icon: image,
-                                    label: {
-                                        color: "#4d4d70",
-                                        // text: name,
-                                    },
+                                    // label: {
+                                    //     color: "#4d4d70",
+                                    //     // text: name,
+                                    // },
                                     icon: {
                                         labelOrigin: new google.maps.Point(11, 30),
                                         url: image,
