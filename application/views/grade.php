@@ -55,21 +55,21 @@
             <div id="sidebar-wrapper" style="height:100%;">
                 <ul id="sidebar-nav" style="list-style:none" class="list-group">
                     <li class="sidebar-brand list-group-item"><img id="sidebar-image" class="img-responsive" src="" alt="COULD NOT LOAD IMAGE"></li>
-                    <li class="sidebar-brand "><b id="sidebar-name"></b></li>
-                    <li class="sidebar-brand "><b id="sidebar-addrs"></b></li>
-                    <li class="sidebar-brand "><b id="sidebar-city"></b></li>
-                    <li class="sidebar-brand "><b>Easy to Find</b>    <a onclick="closeNav()" class="close" aria-label="Close cross"> <span class="cross" aria-hidden="true"><b>&times;</b></span></a></li>
-                    <li class="sidebar-brand "><span id="easytofind" class="stars" data-rating="" data-num-stars="5" ></span></li>
-                    <li class="sidebar-brand "><b>Accesibility</b></li>
-                    <li class="sidebar-brand "><span id="accesibility" class="stars" data-rating="" data-num-stars="5" ></span></li>
-                    <li class="sidebar-brand "><b>Ambiance</b></li>
-                    <li class="sidebar-brand "><span id="ambiance" class="stars" data-rating="" data-num-stars="5" ></span></li>
-                    <li class="sidebar-brand "><b>Friendly Staff</b></li>
-                    <li class="sidebar-brand "><span id="staff" class="stars" data-rating="" data-num-stars="5" ></span></li>
-                    <li class="sidebar-brand "><b>Food</b></li>
-                    <li class="sidebar-brand "><span id="food" class="stars" data-rating="" data-num-stars="5" ></span></li>
-                    <li class="sidebar-brand "><b>Noise Level</b></li>
-                    <li class="sidebar-brand "><span id="noise" class="stars" data-rating="" data-num-stars="5" ></span></li>
+                    <li class="sidebar-brand " style="padding-left:2%;"><b id="sidebar-name"></b></li>
+                    <li class="sidebar-brand " style="padding-left:2%;"><b id="sidebar-addrs"></b></li>
+                    <li class="sidebar-brand " style="padding-left:2%;"><b id="sidebar-city"></b></li>
+                    <li class="sidebar-brand " style="padding-left:2%;"><b>Easy to Find</b>    <a onclick="closeNav()" class="close" aria-label="Close cross"> <span class="cross" aria-hidden="true"><b>&times;</b></span></a></li>
+                    <li class="sidebar-brand " style="padding-left:2%;"><span id="easytofind" class="stars" data-rating="" data-num-stars="5" ></span></li>
+                    <li class="sidebar-brand " style="padding-left:2%;"><b>Accesibility</b></li>
+                    <li class="sidebar-brand " style="padding-left:2%;"><span id="accesibility" class="stars" data-rating="" data-num-stars="5" ></span></li>
+                    <li class="sidebar-brand " style="padding-left:2%;"><b>Ambiance</b></li>
+                    <li class="sidebar-brand " style="padding-left:2%;"><span id="ambiance" class="stars" data-rating="" data-num-stars="5" ></span></li>
+                    <li class="sidebar-brand " style="padding-left:2%;"><b>Friendly Staff</b></li>
+                    <li class="sidebar-brand " style="padding-left:2%;"><span id="staff" class="stars" data-rating="" data-num-stars="5" ></span></li>
+                    <li class="sidebar-brand " style="padding-left:2%;"><b>Food</b></li>
+                    <li class="sidebar-brand " style="padding-left:2%;"><span id="food" class="stars" data-rating="" data-num-stars="5" ></span></li>
+                    <li class="sidebar-brand " style="padding-left:2%;"><b>Noise Level</b></li>
+                    <li class="sidebar-brand " style="padding-left:2%;"><span id="noise" class="stars" data-rating="" data-num-stars="5" ></span></li>
                 </ul>
             </div>
             <div id="page-content container-fluid whole">
@@ -161,21 +161,21 @@
                                 map.setZoom(18);
                                 map.panTo(new google.maps.LatLng(lat, lng));
                             }
-                             function calculateAndDisplayRoute(lat,lng) {
+                            function calculateAndDisplayRoute(lat, lng) {
                                 directionsService.route({
-                                  origin: new google.maps.LatLng(40.732714, -73.991393),
-                                  destination: new google.maps.LatLng(lat, lng),
-                                  travelMode: 'DRIVING'
-                                }, function(response, status) {
-                                  if (status === 'OK') {
-                                    directionsDisplay.setDirections(response);
-                                  } else {
-                                    window.alert('Directions request failed due to ' + status);
-                                  }
+                                    origin: new google.maps.LatLng(40.732714, -73.991393),
+                                    destination: new google.maps.LatLng(lat, lng),
+                                    travelMode: 'DRIVING'
+                                }, function (response, status) {
+                                    if (status === 'OK') {
+                                        directionsDisplay.setDirections(response);
+                                    } else {
+                                        window.alert('Directions request failed due to ' + status);
+                                    }
                                 });
-                              }
+                            }
                             setMarker(40.732714, -73.991393, "CIDNY", 0);
-                            places.push(new Place("CIDNY", "841 Broadway #301, New York, NY 10003", "New York", 40.732714,  -73.991393));
+                            places.push(new Place("CIDNY", "841 Broadway #301, New York, NY 10003", "New York", 40.732714, -73.991393));
                         </script>
                         <!--end map-wrapper-->
                         <!--end results-wrapper-->
@@ -676,13 +676,13 @@
                     $(this).html(fullStar + halfStar + noStar);
                 });
             }
-            function search(){
-                var name_place =document.getElementById("place_input").value;
-                for (var i=0; i<places.length;i++){
-                if(places[i].name.toUpperCase()===name_place.toUpperCase()){
-                    showOnMap(places[i].lat,places[i].lng);
+            function search() {
+                var name_place = document.getElementById("place_input").value;
+                for (var i = 0; i < places.length; i++) {
+                    if (places[i].name.toUpperCase() === name_place.toUpperCase()) {
+                        showOnMap(places[i].lat, places[i].lng);
+                    }
                 }
-            }
             }
         </script>
     </div>
