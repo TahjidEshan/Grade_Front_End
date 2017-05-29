@@ -160,6 +160,7 @@
                                 map.panTo(new google.maps.LatLng(lat, lng));
                             }
                             setMarker(40.732714, -73.991393, "CIDNY", 0);
+                            places.push(new Place("CIDNY", "841 Broadway #301, New York, NY 10003", "New York", 40.732714,  -73.991393));
                         </script>
                         <!--end map-wrapper-->
                         <!--end results-wrapper-->
@@ -167,9 +168,9 @@
                             <div class="form search-form horizontal" style="border-width:1px;">
                                 <form>
                                     <div class="input-group">
-                                        <input id="placeinput" class="form-control"  placeholder="Search" type="text" style="background-color:#fff; color:black;">
+                                        <input id="place_input" class="form-control"  placeholder="Search" type="text" style="background-color:#fff; color:black;">
                                         <span class="input-group-btn">
-                                            <button class="btn btn-default" type="submit"><i class="arrow_right icon-custom"></i></button>
+                                            <button class="btn btn-default"  type="button" onclick="search()" style="padding:11px;padding-bottom:12px;"><i class="arrow_right icon-custom"></i></button>
                                         </span>
                                     </div>
                                 </form>
@@ -659,6 +660,14 @@
                     var noStar = new Array(Math.floor(numStars + 1 - rating)).join('<i class="fa fa-star-o icon-custom fa-2x"></i>');
                     $(this).html(fullStar + halfStar + noStar);
                 });
+            }
+            function search(){
+                var name_place =document.getElementById("place_input").value;
+                for (var i=0; i<places.length;i++){
+                if(places[i].name.toUpperCase()===name_place.toUpperCase()){
+                    showOnMap(places[i].lat,places[i].lng);
+                }
+            }
             }
         </script>
     </div>
