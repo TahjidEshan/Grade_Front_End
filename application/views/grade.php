@@ -34,7 +34,7 @@
     </head>
     <body class="homepage">
         <div class="page-wrapper">
-            <header id="page-header">
+            <header id="page-header" style="position:fixed;top: 0;left: 0; right: 0;margin: 0 auto;">
                 <nav>
                     <div class="left">
                         <a href="<?php echo base_url(); ?>index.php" class="brand"><img src="<?php echo base_url(); ?>img/grade-icon-36x36.png" alt=""></a>
@@ -161,9 +161,27 @@
                                 map.setZoom(18);
                                 map.panTo(new google.maps.LatLng(lat, lng));
                             }
+                            var currentLat=40.732714;
+                            var currentLng=-73.991393;
+                            function getLocation(){
+                                 if (navigator.geolocation) {
+                                        navigator.geolocation.getCurrentPosition(setPosition);
+                                    } else {
+                                      window.alert("Geolocation is not supported by this browser.");
+                                    }
+                            }
+                            function setPosition(position) {
+                                currentLat=position.coords.latitude;
+                                currentLng=position.coords.longitude;
+                                // console.log(position.coords.latitude);
+                                // console.log(currentLat);
+                            }
                             function calculateAndDisplayRoute(lat, lng) {
+                                // console.log(currentLat +"Here");
+                                 // getLocation();
+                                // console.log(currentLat +"Here");
                                 directionsService.route({
-                                    origin: new google.maps.LatLng(40.732714, -73.991393),
+                                    origin: new google.maps.LatLng(currentLat, currentLng),
                                     destination: new google.maps.LatLng(lat, lng),
                                     travelMode: 'DRIVING'
                                 }, function (response, status) {
@@ -174,6 +192,7 @@
                                     }
                                 });
                             }
+                            getLocation();
                             setMarker(40.732714, -73.991393, "CIDNY", 0);
                             places.push(new Place("CIDNY", "841 Broadway #301, New York, NY 10003", "New York", 40.732714, -73.991393));
                         </script>
@@ -211,16 +230,16 @@
                                         <button class="btn  btn-topButton" onclick="$('#restaurant').fadeIn(500);
                                                 $('#bar').hide();
                                                 $('#pollsite').hide();
-                                                $('#cafe').hide();"><i class="fa fa-cutlery" aria-hidden="true"></i>&nbsp; Restaurant</button>
+                                                $('#cafe').hide();"><i class="fa fa-spoon" aria-hidden="true"></i>&nbsp; Restaurant</button>
                                         <button class="btn btn-topButton" onclick="$('#restaurant').hide();
                                                 $('#bar').hide();
                                                 $('#pollsite').fadeIn(500);
-                                                $('#cafe').hide();"><i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp; Poll SIte</button>
+                                                $('#cafe').hide();"><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; Poll SIte</button>
                                     </div>
                                 </div>
                                 <!--end section-title-->
                             </div>
-                            <hr style="margin-top:-50px;height:1px;border:1px;color:#4d4d70;background-color:#4d4d70;">
+                            <hr style="margin-top:-45px;height:1px;border:1px;color:#4d4d70;background-color:#4d4d70;">
                             <div id="cafe">
                                 <div class="row ">
                                     <?php
