@@ -4,31 +4,31 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Tahjid">
-        <link href="<?php echo base_url(); ?>fonts\font-awesome.css" rel="stylesheet" type="text/css">
-        <link href="<?php echo base_url(); ?>fonts\elegant-fonts.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url(); ?>fonts/font-awesome.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url(); ?>fonts/elegant-fonts.css" rel="stylesheet" type="text/css">
         <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,900,400italic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="<?php echo base_url(); ?>bootstrap\css\bootstrap.css" type="text/css">
-        <link rel="stylesheet" href="<?php echo base_url(); ?>css\zabuto_calendar.min.css" type="text/css">
-        <link rel="stylesheet" href="<?php echo base_url(); ?>css\owl.carousel.css" type="text/css">
-        <link rel="stylesheet" href="<?php echo base_url(); ?>css\trackpad-scroll-emulator.css" type="text/css">
-        <link rel="stylesheet" href="<?php echo base_url(); ?>css\jquery.nouislider.min.css" type="text/css">
-        <link rel="stylesheet" href="<?php echo base_url(); ?>css\style.css" type="text/css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>bootstrap/css/bootstrap.css" type="text/css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>css/zabuto_calendar.min.css" type="text/css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>css/owl.carousel.css" type="text/css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>css/trackpad-scroll-emulator.css" type="text/css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>css/jquery.nouislider.min.css" type="text/css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css" type="text/css">
         <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyDvKO17zrM_l7NMCaw35GxI6VQbW896qJA &libraries=places"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>js\jquery-2.2.1.min.js"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>js\jquery-migrate-1.2.1.min.js"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>bootstrap\js\bootstrap.min.js"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>js\bootstrap-select.min.js"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>js\richmarker-compiled.js"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>js\markerclusterer_packed.js"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>js\infobox.js"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>js\jquery.validate.min.js"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>js\jquery.fitvids.js"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>js\bootstrap-datepicker.js"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>js\icheck.min.js"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>js\owl.carousel.min.js"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>js\jquery.nouislider.all.min.js"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>js\custom.js"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>js\maps.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>js/jquery-2.2.1.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>js/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>js/bootstrap-select.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>js/richmarker-compiled.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>js/markerclusterer_packed.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>js/infobox.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>js/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>js/jquery.fitvids.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>js/bootstrap-datepicker.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>js/icheck.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>js/owl.carousel.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>js/jquery.nouislider.all.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>js/custom.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>js/maps.js"></script>
         <link rel="icon" type="image/png" href="<?php echo base_url(); ?>img/grade-icon-36x36.png" />
         <title>Grade</title>
     </head>
@@ -65,24 +65,27 @@
             </header>
             <!--end page-header-->
             <!-- sidebar begins -->
-            <div id="sidebar-wrapper" style="overflow-y: scroll;top: 0;bottom: 0;">
+            <div id="sidebar-wrapper" style="overflow-y: scroll;top: 0;bottom: 0;font-family:Tahoma,Verdana,sans-serif; font-weight:normal;">
                 <ul id="sidebar-nav" style="list-style:none" class="list-group">
-                    <li class="sidebar-brand list-group-item"><img id="sidebar-image" class="img-responsive" src="" alt="COULD NOT LOAD IMAGE"></li>
-                    <li class="sidebar-brand " style="padding-left:2%;"><b id="sidebar-name"></b></li>
-                    <li class="sidebar-brand " style="padding-left:2%;"><b id="sidebar-addrs"></b></li>
-                    <li class="sidebar-brand " style="padding-left:2%;"><b id="sidebar-city"></b></li>
-                    <li class="sidebar-brand " style="padding-left:2%;"><b>Easy to Find</b>    <a onclick="closeNav()" class="close" aria-label="Close cross"> <span class="cross" aria-hidden="true"><b>&times;</b></span></a></li>
-                    <li class="sidebar-brand " style="padding-left:2%;"><span id="easytofind" class="stars" data-rating="" data-num-stars="5" ></span></li>
-                    <li class="sidebar-brand " style="padding-left:2%;"><b>Accesibility</b></li>
-                    <li class="sidebar-brand " style="padding-left:2%;"><span id="accesibility" class="stars" data-rating="" data-num-stars="5" ></span></li>
-                    <li class="sidebar-brand " style="padding-left:2%;"><b>Ambiance</b></li>
-                    <li class="sidebar-brand " style="padding-left:2%;"><span id="ambiance" class="stars" data-rating="" data-num-stars="5" ></span></li>
-                    <li class="sidebar-brand " style="padding-left:2%;"><b>Friendly Staff</b></li>
-                    <li class="sidebar-brand " style="padding-left:2%;"><span id="staff" class="stars" data-rating="" data-num-stars="5" ></span></li>
-                    <li class="sidebar-brand " style="padding-left:2%;"><b>Food</b></li>
-                    <li class="sidebar-brand " style="padding-left:2%;"><span id="food" class="stars" data-rating="" data-num-stars="5" ></span></li>
-                    <li class="sidebar-brand " style="padding-left:2%;"><b>Noise Level</b></li>
-                    <li class="sidebar-brand " style="padding-left:2%;"><span id="noise" class="stars" data-rating="" data-num-stars="5" ></span></li>
+                    <li class="sidebar-brand " style=""><a onclick="closeNav()" id="closeButton"> <i class="fa fa-times-circle-o icon-custom fa-2x" aria-hidden="true"></i></a></li>
+                    <li class="sidebar-brand list-group-item" style=""><img id="sidebar-image" class="img-responsive" src="" alt="COULD NOT LOAD IMAGE"></li>
+                    <li class="sidebar-brand " style="padding-left:4%;margin-top:5%;"><h3><b id="sidebar-name"></b></h3></li>
+                    <li class="sidebar-brand " style="padding-left:4%;margin-top:-3%;"><p id="sidebar-addrs"></p></li>
+                    <li class="sidebar-brand " style="padding-left:4%;margin-top:-3%;"><p id="sidebar-city"></p></li>
+                    <li class="sidebar-brand " style="padding-left:4%;margin-top:3%;"><i>Easy to Find</i> </li>
+                    <li class="sidebar-brand " style="padding-left:4%;"><span id="easytofind" class="stars" data-rating="" data-num-stars="5" ></span></li>
+                    <li class="sidebar-brand " style="padding-left:4%;"><i>Accesibility</i></li>
+                    <li class="sidebar-brand " style="padding-left:4%;"><span id="accesibility" class="stars" data-rating="" data-num-stars="5" ></span></li>
+                    <li class="sidebar-brand " style="padding-left:4%;"><i>Ambiance</i></li>
+                    <li class="sidebar-brand " style="padding-left:4%;"><span id="ambiance" class="stars" data-rating="" data-num-stars="5" ></span></li>
+                    <li class="sidebar-brand " style="padding-left:4%;"><i>Friendly Staff</i></li>
+                    <li class="sidebar-brand " style="padding-left:4%;"><span id="staff" class="stars" data-rating="" data-num-stars="5" ></span></li>
+                    <li class="sidebar-brand " style="padding-left:4%;"><i>Food</i></li>
+                    <li class="sidebar-brand " style="padding-left:4%;"><span id="food" class="stars" data-rating="" data-num-stars="5" ></span></li>
+                    <li class="sidebar-brand " style="padding-left:4%;"><i>Noise Level</i></li>
+                    <li class="sidebar-brand " style="padding-left:4%;"><span id="noise" class="stars" data-rating="" data-num-stars="5" ></span></li>
+                    <li class="sidebar-brand " style="padding-left:2%;"><button class="btn btn-primary" onclick="showRoute()">Get Directions</button></li>
+                    <input type="hidden" id="latList" value=""><input type="hidden" id="lngList" value="">
                 </ul>
             </div>
             <!-- sidebar ends -->
@@ -132,7 +135,7 @@
                                 }
                                 map = new google.maps.Map(document.getElementById(element), {
                                     zoom: mapDefaultZoom,
-                                    scrollwheel: true,
+                                    scrollwheel: false,
                                     center: new google.maps.LatLng(_latitude, _longitude),
                                     mapTypeId: "roadmap",
                                     styles: [{"featureType": "administrative", "elementType": "labels.text.fill", "stylers": [{"color": "#c6c6c6"}]}, {"featureType": "landscape", "elementType": "all", "stylers": [{"color": "#f2f2f2"}]}, {"featureType": "poi", "elementType": "all", "stylers": [{"visibility": "off"}]}, {"featureType": "road", "elementType": "all", "stylers": [{"saturation": -100}, {"lightness": 45}]}, {"featureType": "road.highway", "elementType": "all", "stylers": [{"visibility": "simplified"}]}, {"featureType": "road.highway", "elementType": "geometry.fill", "stylers": [{"color": "#ffffff"}]}, {"featureType": "road.arterial", "elementType": "labels.icon", "stylers": [{"visibility": "off"}]}, {"featureType": "transit", "elementType": "all", "stylers": [{"visibility": "off"}]}, {"featureType": "water", "elementType": "all", "stylers": [{"color": "#dde6e8"}, {"visibility": "on"}]}]
@@ -171,12 +174,60 @@
                                     },
                                 });
                             }
+                            function setCustomMarker(_name, _easytofind, _accesibility, _ambiance, _staff, _food, _noise, lat, lng, _addrs, _city, count) {
+                                var image = '';
+                                if (count == 0) {
+                                    image = "<?php echo base_url(); ?>img/grade-icon-18x18.png";
+                                } else if (count == 1) {
+                                    image = "<?php echo base_url(); ?>img/coffee.png";
+                                } else if (count == 2) {
+                                    image = "<?php echo base_url(); ?>img/glass.png";
+                                } else if (count == 3) {
+                                    image = "<?php echo base_url(); ?>img/spoon.png";
+                                } else if (count == 4) {
+                                    image = "<?php echo base_url(); ?>img/bars.png";
+                                }
+                                var marker = new google.maps.Marker({
+                                    position: new google.maps.LatLng(lat, lng),
+                                    map: map, // under
+                                    name: _name,
+                                    easytofind: _easytofind,
+                                    accesibility: _accesibility,
+                                    ambiance: _ambiance,
+                                    staff: _staff,
+                                    food: _food,
+                                    noise: _noise,
+                                    addrs: _addrs,
+                                    city: _city,
+                                    // label: name,
+                                    // icon: image,
+                                    label: {
+                                        color: "#4d4d70",
+                                        text: _name,
+                                    },
+                                    icon: {
+                                        labelOrigin: new google.maps.Point(11, 30),
+                                        url: image,
+                                        color: "#4d4d70",
+                                        size: new google.maps.Size(22, 30),
+                                        origin: new google.maps.Point(0, 0),
+                                        anchor: new google.maps.Point(11, 30),
+                                    },
+                                });
+
+                                google.maps.event.addListener(marker, 'click', function () {
+                                    openNav(this.name, this.easytofind, this.accesibility, this.ambiance, this.staff, this.food, this.noise, this.position.lat(), this.position.lng(), this.addrs, this.city)
+                                });
+                            }
                             function showOnMap(lat, lng) {
                                 map.setZoom(18);
                                 map.panTo(new google.maps.LatLng(lat, lng));
                             }
-                            var currentLat = 40.732714;
-                            var currentLng = -73.991393;
+                            var defalultLocation = new google.maps.LatLng(40.732714, -73.991393);
+                            var targetLocation;
+
+                            // var currentLat = 40.732714;
+                            // var currentLng = -73.991393;
                             function getLocation() {
                                 if (navigator.geolocation) {
                                     navigator.geolocation.getCurrentPosition(setPosition);
@@ -188,34 +239,82 @@
                                 currentLat = position.coords.latitude;
                                 currentLng = position.coords.longitude;
                             }
-                            function calculateAndDisplayRoute(lat, lng) {
+
+                            function show_error(error) {
+                                switch (error.code) {
+                                    case error.PERMISSION_DENIED:
+                                       // alert("Permission denied by user.");
+                                        makeDefaultRoute(targetLocation);
+                                        break;
+                                    case error.POSITION_UNAVAILABLE:
+                                        makeDefaultRoute(targetLocation);
+                                        alert("Location position unavailable.");
+                                        break;
+                                    case error.TIMEOUT:
+                                        makeDefaultRoute(targetLocation);
+                                        alert("Request timeout.");
+                                        break;
+                                    case error.UNKNOWN_ERROR:
+                                        makeDefaultRoute(targetLocation);
+                                        alert("Unknown error.");
+                                        break;
+                                }
+                            }
+                            function makeRoute(position) {
+                                console.log("lat = " + position.coords.latitude + " lng = " + position.coords.longitude + " target =" + targetLocation);
                                 directionsService.route({
-                                    origin: new google.maps.LatLng(currentLat, currentLng),
-                                    destination: new google.maps.LatLng(lat, lng),
+                                    origin: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+                                    destination: targetLocation,
                                     travelMode: 'DRIVING'
                                 }, function (response, status) {
                                     if (status === 'OK') {
                                         directionsDisplay.setDirections(response);
                                     } else {
-                                        window.alert('Directions request failed due to ' + status);
+                                        makeDefaultRoute(targetLocation);
+                                        window.alert('makeRoute Directions request failed due to ' + status);
                                     }
                                 });
                             }
+                            function makeDefaultRoute(position) {
+                                console.log("Default " + "lat = " + position.lat + " lng = " + position.lng + " target =" + targetLocation);
+                                directionsService.route({
+                                    origin: new google.maps.LatLng(40.732714, -73.991393),
+                                    destination: position,
+                                    travelMode: 'DRIVING'
+                                }, function (response, status) {
+                                    if (status === 'OK') {
+                                        directionsDisplay.setDirections(response);
+                                    } else {
+                                        window.alert('makeDefaultRoute Directions request failed due to ' + status);
+                                    }
+                                });
+                            }
+                            function calculateAndDisplayRoute(lat, lng) {
+                                console.log("tar::: lat=" + lat + "  lng= " + lng);
+                                targetLocation = new google.maps.LatLng(lat, lng);
+
+                                if (navigator.geolocation) {
+                                    navigator.geolocation.getCurrentPosition(makeRoute, show_error);
+                                } else {
+                                    console.log("Geolocation is not supported by this browser.");
+                                }
+                            }
+
+
 
                         </script>
                         <!--end map-wrapper-->
                     </div>
                     <div class="col-md-10 col-sm-10 col-xs-10  col-md-offset-1 col-sm-offset-1" >
                         <div class="form search-form " style="border-width:1px;">
-                            <form>
                                 <div class="input-group form-group">
-                                    <input id="place_input" class="form-control input-xlarge"  placeholder="Type Name of The Place to Search" type="text" style="background-color:#fff; color:#4d4d70;">
+                                    <input id="place_input" class="form-control "  placeholder="Type Name of The Place to Search" type="text" style="background-color:#fff; color:#4d4d70;" list="dlist">
+                                    <datalist id="dlist"></datalist>
                                     <span class="input-group-btn">
-                                        <button class="btn btn-default"  type="button" onclick="search()" style="padding:70%;"><i class="arrow_right icon-custom"></i></button>
+                                        <button class="btn btn-default"  type="button" onclick="search()" style="padding:1.5vh;"><i class="arrow_right icon-custom"></i></button>
                                     </span>
                                 </div>
-                            </form>
-                            <!-- end form -->
+                                <!-- end form -->
                         </div>
                         <!-- end search-form -->
                     </div>
@@ -318,7 +417,8 @@
                                             </div>
                                             <!--end additional-info-->
                                             <script>
-                                                setMarker(parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>'), '<?php echo addslashes($name); ?>', 1);
+                                                setCustomMarker('<?php echo addslashes($name); ?>', '<?php echo $easytofind; ?>', '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>', '<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>', '<?php echo addslashes($value->address); ?>', '<?php echo addslashes($value->city); ?>', 1);
+                                                // setMarker(parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>'), '<?php echo addslashes($name); ?>', 1);
                                                 places.push(new Place('<?php echo addslashes($name); ?>', '<?php echo addslashes($value->address); ?>', '<?php echo addslashes($value->city); ?>', parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>')));
                                             </script>
                                         </div>
@@ -395,7 +495,8 @@
                                             </div>
                                             <!--end additional-info-->
                                             <script>
-                                                setMarker(parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>'), '<?php echo addslashes($name); ?>', 2);
+                                                setCustomMarker('<?php echo addslashes($name); ?>', '<?php echo $easytofind; ?>', '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>', '<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>', '<?php echo addslashes($value->address); ?>', '<?php echo addslashes($value->city); ?>', 2);
+                                                // setMarker(parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>'), '<?php echo addslashes($name); ?>', 2);
                                                 places.push(new Place('<?php echo addslashes($name); ?>', '<?php echo addslashes($value->address); ?>', '<?php echo addslashes($value->city); ?>', parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>')));
                                             </script>
                                         </div>
@@ -472,8 +573,9 @@
                                             </div>
                                             <!--end additional-info-->
                                             <script>
-                                                setMarker(parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>'), '<?php echo addslashes($name); ?>', 3);
-                                                places.push(new Place('<?php echo addslashes($name); ?>', '<?php echo addslashes($value->address); ?>', '<?php echo addslashes($value->city); ?>', parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>')));
+                                                setCustomMarker('<?php echo addslashes($name); ?>', '<?php echo $easytofind; ?>', '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>', '<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>', '<?php echo preg_replace("/\r\n|\r|\n/", ' ', $value->address); ?>', '<?php echo addslashes($value->city); ?>', 3);
+                                                // setMarker(parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>'), '<?php echo addslashes($name); ?>', 3);
+                                                places.push(new Place('<?php echo addslashes($name); ?>', '<?php echo preg_replace("/\r\n|\r|\n/", ' ', $value->address); ?>', '<?php echo addslashes($value->city); ?>', parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>')));
                                             </script>
                                         </div>
                                         <!--end item-->
@@ -549,7 +651,8 @@
                                             </div>
                                             <!--end additional-info-->
                                             <script>
-                                                setMarker(parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>'), '<?php echo addslashes($name); ?>', 4);
+                                                setCustomMarker('<?php echo addslashes($name); ?>', '<?php echo $easytofind; ?>', '<?php echo $accesibility; ?>', '<?php echo $ambiance; ?>', '<?php echo $staff; ?>', '<?php echo $food; ?>', '<?php echo $noise; ?>', '<?php echo $value->lat; ?>', '<?php echo $value->lng; ?>', '<?php echo addslashes($value->address); ?>', '<?php echo addslashes($value->city); ?>', 4);
+                                                // setMarker(parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>'), '<?php echo addslashes($name); ?>', 4);
                                                 places.push(new Place('<?php echo addslashes($name); ?>', '<?php echo addslashes($value->address); ?>', '<?php echo addslashes($value->city); ?>', parseFloat('<?php echo $value->lat; ?>'), parseFloat('<?php echo $value->lng; ?>')));
                                             </script>
                                         </div>
@@ -635,7 +738,7 @@
                             </div>
                             <div class="background-wrapper">
                                 <div class="bg-transfer opacity-50">
-                                    <img src="<?php echo base_url(); ?>img\footer-bg.png" alt="">
+                                    <img src="<?php echo base_url(); ?>img/footer-bg.png" alt="">
                                 </div>
                             </div>
                             <!--end background-wrapper-->
@@ -667,11 +770,11 @@
         <script>
             function openNav(name, easytofind, accesibility, ambiance, staff, food, noise, lat, lng, addrs, city) {
                 closeNav();
-                document.getElementById("sidebar-wrapper").style.width = "40vw";
+                document.getElementById("sidebar-wrapper").style.width = "30vw";
                 document.getElementById("sidebar-name").innerHTML = name;
                 document.getElementById("sidebar-addrs").innerHTML = addrs;
                 document.getElementById("sidebar-city").innerHTML = city;
-                var img = "https://maps.googleapis.com/maps/api/streetview?size=500x350&location=" + lat + "," + lng + "7&key=AIzaSyDvKO17zrM_l7NMCaw35GxI6VQbW896qJA "
+                var img = "https://maps.googleapis.com/maps/api/streetview?size=500x280&location=" + lat + "," + lng + "7&key=AIzaSyDvKO17zrM_l7NMCaw35GxI6VQbW896qJA "
                 $("#sidebar-image").attr("src", img);
                 $('#easytofind').stars(easytofind);
                 $('#accesibility').stars(accesibility);
@@ -679,6 +782,8 @@
                 $('#staff').stars(staff);
                 $('#food').stars(food);
                 $('#noise').stars(noise);
+                $('#latList').val(lat);
+                $('#lngList').val(lng);
             }
             function closeNav() {
                 document.getElementById("sidebar-wrapper").style.width = "0";
@@ -701,9 +806,27 @@
                     }
                 }
             }
-            getLocation();
+
+            function showRoute() {
+                closeNav();
+                calculateAndDisplayRoute(document.getElementById("latList").value, document.getElementById("lngList").value);
+            }
+            function setList(){
+                    var options = '';
+                    for(var i = 0; i < places.length; i++){
+                    options += '<option value="'+places[i].name+'" />';
+                }
+                    document.getElementById('dlist').innerHTML = options;
+            }
             setMarker(40.732714, -73.991393, "CIDNY", 0);
+            setList();
             places.push(new Place("CIDNY", "841 Broadway #301, New York, NY 10003", "New York", 40.732714, -73.991393));
+            document.getElementById('place_input').onkeydown = function(event) {
+                if (event.keyCode == 13) {
+                    search();
+                }
+            }
+
         </script>
     </body>
 </html>
