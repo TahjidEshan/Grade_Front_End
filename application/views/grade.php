@@ -65,33 +65,33 @@
             </header>
             <!--end page-header-->
             <!-- sidebar begins -->
-            <div id="sidebar-wrapper" style="overflow-y: scroll;top: 0;bottom: 0;font-family:Tahoma,Verdana,sans-serif; font-weight:normal;">
-                <ul id="sidebar-nav" style="list-style:none" class="list-group">
-                    <li class="sidebar-brand " style=""><a onclick="closeNav()" id="closeButton"> <i class="fa fa-times-circle-o icon-custom fa-2x" aria-hidden="true"></i></a></li>
-                    <li class="sidebar-brand list-group-item" style=""><img id="sidebar-image" class="img-responsive" src="" alt="COULD NOT LOAD IMAGE"></li>
-                    <li class="sidebar-brand " style="padding-left:4%;margin-top:5%;"><h3><b id="sidebar-name"></b></h3></li>
-                    <li class="sidebar-brand " style="padding-left:4%;margin-top:-3%;"><p id="sidebar-addrs"></p></li>
-                    <li class="sidebar-brand " style="padding-left:4%;margin-top:-3%;"><p id="sidebar-city"></p></li>
-                    <li class="sidebar-brand " style="padding-left:4%;margin-top:3%;"><i>Easy to Find</i> </li>
-                    <li class="sidebar-brand " style="padding-left:4%;"><span id="easytofind" class="stars" data-rating="" data-num-stars="5" ></span></li>
-                    <li class="sidebar-brand " style="padding-left:4%;"><i>Accesibility</i></li>
-                    <li class="sidebar-brand " style="padding-left:4%;"><span id="accesibility" class="stars" data-rating="" data-num-stars="5" ></span></li>
-                    <li class="sidebar-brand " style="padding-left:4%;"><i>Ambiance</i></li>
-                    <li class="sidebar-brand " style="padding-left:4%;"><span id="ambiance" class="stars" data-rating="" data-num-stars="5" ></span></li>
-                    <li class="sidebar-brand " style="padding-left:4%;"><i>Friendly Staff</i></li>
-                    <li class="sidebar-brand " style="padding-left:4%;"><span id="staff" class="stars" data-rating="" data-num-stars="5" ></span></li>
-                    <li class="sidebar-brand " style="padding-left:4%;"><i>Food</i></li>
-                    <li class="sidebar-brand " style="padding-left:4%;"><span id="food" class="stars" data-rating="" data-num-stars="5" ></span></li>
-                    <li class="sidebar-brand " style="padding-left:4%;"><i>Noise Level</i></li>
-                    <li class="sidebar-brand " style="padding-left:4%;"><span id="noise" class="stars" data-rating="" data-num-stars="5" ></span></li>
-                    <li class="sidebar-brand " style="padding-left:2%;"><button class="btn btn-primary" onclick="showRoute()">Get Directions</button></li>
+            <div id="sidebar-wrapper" style="overflow-y: scroll;top: 0;bottom: 0;font-family:Tahoma,Verdana,sans-serif; font-weight:normal;height:100%; background:#fafafa;">
+                <ul id="sidebar-nav flex" style="list-style:none" class="list-group">
+                    <li class="sidebar-brand flex-item fontList" style=""><a onclick="closeNav()" id="closeButton"> <i class="fa fa-times-circle-o icon-custom fa-2x" aria-hidden="true"></i></a></li>
+                    <li class="sidebar-brand list-group-item flex-item" style=""><img id="sidebar-image" class="img-responsive" src="" alt="COULD NOT LOAD IMAGE"></li>
+                    <li class="sidebar-brand flex-item fontList" style="padding-left:4%;margin-top:5%;"><h3><b id="sidebar-name"></b></h3></li>
+                    <li class="sidebar-brand flex-item fontList" style="padding-left:4%;margin-top:-3%;"><p id="sidebar-addrs"></p></li>
+                    <li class="sidebar-brand flex-item fontList" style="padding-left:4%;margin-top:-3%;"><p id="sidebar-city"></p></li>
+                    <li class="sidebar-brand flex-item fontList" style="padding-left:4%;margin-top:3%;"><i>Easy to Find</i> </li>
+                    <li class="sidebar-brand flex-item fontList" style="padding-left:4%;"><span id="easytofind" class="stars" data-rating="" data-num-stars="5" ></span></li>
+                    <li class="sidebar-brand flex-item fontList" style="padding-left:4%;"><i>Accesibility</i></li>
+                    <li class="sidebar-brand flex-item fontList" style="padding-left:4%;"><span id="accesibility" class="stars" data-rating="" data-num-stars="5" ></span></li>
+                    <li class="sidebar-brand flex-item fontList" style="padding-left:4%;"><i>Ambiance</i></li>
+                    <li class="sidebar-brand flex-item fontList" style="padding-left:4%;"><span id="ambiance" class="stars" data-rating="" data-num-stars="5" ></span></li>
+                    <li class="sidebar-brand flex-item fontList" style="padding-left:4%;"><i>Friendly Staff</i></li>
+                    <li class="sidebar-brand flex-item fontList" style="padding-left:4%;"><span id="staff" class="stars" data-rating="" data-num-stars="5" ></span></li>
+                    <li class="sidebar-brand flex-item fontList" style="padding-left:4%;"><i>Food</i></li>
+                    <li class="sidebar-brand flex-item fontList" style="padding-left:4%;"><span id="food" class="stars" data-rating="" data-num-stars="5" ></span></li>
+                    <li class="sidebar-brand flex-item fontList" style="padding-left:4%;"><i>Noise Level</i></li>
+                    <li class="sidebar-brand flex-item fontList" style="padding-left:4%;"><span id="noise" class="stars" data-rating="" data-num-stars="5" ></span></li>
+                    <li class="sidebar-brand flex-item fontList" style="padding-left:2%;"><button class="btn btn-primary fontList" onclick="showRoute()">Get Directions</button></li>
                     <input type="hidden" id="latList" value=""><input type="hidden" id="lngList" value="">
                 </ul>
             </div>
             <!-- sidebar ends -->
             <div id="page-content">
-                <div class="firstPage col-md-12 col-sm-12 col xs-12" style="background-color:#4D4D70; height:85vh; margin-bottom:10vh;padding-top:30vh;">
-                    <h1 style="color:#FFF; text-align:center; font-size:6vw;margin-top: 5px;margin-bottom: 10px; font-family:Tahoma,Verdana,sans-serif;line-height: 1.1; font-weight:normal;opacity:1;">Welcome to Grade</h1>
+                <div class="firstPage col-md-12 col-sm-12 col xs-12" style="background-color:#4D4D70; height:85vh; margin-bottom:10vh;padding-top:19vh;" id="qwe">
+                    <h1 style="color:#FFF; text-align:center; font-size:6vw;margin-top: 5px;margin-bottom: 10px; font-family:Tahoma,Verdana,sans-serif;line-height: 1.1; font-weight:normal;opacity:1;margin-top:7vh;">Welcome to Grade</h1>
                     <h2 style="opacity: 1; text-align:center;color: #fff;font-size: 3vh;font-weight: normal;margin-top: 5px;margin-bottom: 10px;font-family: Tahoma,Verdana,sans-serif;line-height: 1.1;">
                         Grade is a universal social accessibility tool for people with disabilities. We map and grade accessible places around the country to promote equal access for everyone. We share our finding with everyone. We orgnize and ask public officials to make changes, most importanly, we go out and have fun. Grade is run by the awesome people at Cidny.
                     </h2>
@@ -261,7 +261,7 @@
                                 }
                             }
                             function makeRoute(position) {
-                                console.log("lat = " + position.coords.latitude + " lng = " + position.coords.longitude + " target =" + targetLocation);
+                                // console.log("lat = " + position.coords.latitude + " lng = " + position.coords.longitude + " target =" + targetLocation);
                                 directionsService.route({
                                     origin: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
                                     destination: targetLocation,
@@ -271,12 +271,12 @@
                                         directionsDisplay.setDirections(response);
                                     } else {
                                         makeDefaultRoute(targetLocation);
-                                        window.alert('makeRoute Directions request failed due to ' + status);
+                                        // window.alert('makeRoute Directions request failed due to ' + status);
                                     }
                                 });
                             }
                             function makeDefaultRoute(position) {
-                                console.log("Default " + "lat = " + position.lat + " lng = " + position.lng + " target =" + targetLocation);
+                                // console.log("Default " + "lat = " + position.lat + " lng = " + position.lng + " target =" + targetLocation);
                                 directionsService.route({
                                     origin: new google.maps.LatLng(40.732714, -73.991393),
                                     destination: position,
@@ -285,12 +285,12 @@
                                     if (status === 'OK') {
                                         directionsDisplay.setDirections(response);
                                     } else {
-                                        window.alert('makeDefaultRoute Directions request failed due to ' + status);
+                                        // window.alert('makeDefaultRoute Directions request failed due to ' + status);
                                     }
                                 });
                             }
                             function calculateAndDisplayRoute(lat, lng) {
-                                console.log("tar::: lat=" + lat + "  lng= " + lng);
+                                // console.log("tar::: lat=" + lat + "  lng= " + lng);
                                 targetLocation = new google.maps.LatLng(lat, lng);
 
                                 if (navigator.geolocation) {
@@ -305,19 +305,14 @@
                         </script>
                         <!--end map-wrapper-->
                     </div>
-                    <div class="col-md-10 col-sm-10 col-xs-10  col-md-offset-1 col-sm-offset-1" >
-                        <div class="form search-form " style="border-width:1px;">
-                                <div class="input-group form-group">
-                                    <input id="place_input" class="form-control "  placeholder="Type Name of The Place to Search" type="text" style="background-color:#fff; color:#4d4d70;" list="dlist">
+                    <div>
+                        <input id="place_input" class="form-control"  placeholder="Type Name of The Place to Search" type="text" style="background-color:#fff; color:#4d4d70;margin:1% auto 0 auto;display: block; width:95vw;border-radius: 5px;" list="dlist">
                                     <datalist id="dlist"></datalist>
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-default"  type="button" onclick="search()" style="padding:1.5vh;"><i class="arrow_right icon-custom"></i></button>
-                                    </span>
-                                </div>
-                                <!-- end form -->
-                        </div>
-                        <!-- end search-form -->
-                    </div>
+                        <div class="col-md-12 text-center" style="">
+                        <button class="btn btn-default"  type="button" onclick="search()" style="margin-top:5px; color:white; background:#4d4d70;border-color:#4d4d70;border-radius:5px"><i class="fa fa-search" aria-hidden="true"></i>
+Search </button>
+                         </div>
+                         </div>
                     <!-- end hero-section -->
                 </div>
                 <div class="block col-md-12 col-sm-12" >
@@ -770,7 +765,11 @@
         <script>
             function openNav(name, easytofind, accesibility, ambiance, staff, food, noise, lat, lng, addrs, city) {
                 closeNav();
-                document.getElementById("sidebar-wrapper").style.width = "30vw";
+                var x="30vw";
+                if(screen.width<480){
+                    x="50vw";
+                }
+                document.getElementById("sidebar-wrapper").style.width = x;
                 document.getElementById("sidebar-name").innerHTML = name;
                 document.getElementById("sidebar-addrs").innerHTML = addrs;
                 document.getElementById("sidebar-city").innerHTML = city;
@@ -810,6 +809,7 @@
             function showRoute() {
                 closeNav();
                 calculateAndDisplayRoute(document.getElementById("latList").value, document.getElementById("lngList").value);
+                window.location.hash = '#mapLabel';
             }
             function setList(){
                     var options = '';
